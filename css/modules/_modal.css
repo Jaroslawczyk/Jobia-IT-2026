@@ -1,0 +1,120 @@
+/* =============================================================
+   MODULE · Модальное окно направления
+   -------------------------------------------------------------
+   .ov     — затемняющая подложка на весь экран (по умолчанию скрыта;
+             видимое состояние .ov.on — в css/state/_is-active.css).
+   .modal  — само окно.
+   .mhead  — шапка окна (группа, название, тег, индикаторы).
+   .stats  — строка индикаторов в шапке.
+   .tabs   — полоса вкладок.
+   .body   — тело активной вкладки.
+   .box    — вложенная панель внутри вкладки.
+   .grp    — подзаголовок-разделитель с линией.
+   ============================================================= */
+
+.ov
+{
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 5, 12, .85);
+  display: none;
+  overflow-y: auto;
+  padding: 16px;
+  z-index: 50;
+}
+
+.modal
+{
+  background: linear-gradient(170deg, var(--panel2), var(--panel));
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  max-width: 920px;
+  width: 100%;
+  margin: 20px auto 60px;
+}
+
+.mhead
+{
+  padding: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.mhead h2
+{
+  font-size: 27px;
+  font-weight: 800;
+  margin: 6px 0 0;
+  line-height: 1.1;
+}
+
+/* кнопка закрытия «✕» */
+.close
+{
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--dim);
+  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  flex-shrink: 0;
+  font: inherit;
+  font-size: 15px;
+}
+
+.stats
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.tabs
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px 20px 0;
+}
+
+.body
+{
+  padding: 20px;
+}
+
+.box
+{
+  background: #08101E;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.box h4
+{
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* подзаголовок с горизонтальной линией-заполнителем */
+.grp
+{
+  margin: 18px 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.grp b
+{
+  font-size: 13px;
+}
+
+.grp span
+{
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}

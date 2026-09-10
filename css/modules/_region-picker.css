@@ -1,0 +1,41 @@
+/* =============================================================
+   MODULE · Выбор региона
+   -------------------------------------------------------------
+   Кнопки «Польша / Варшава / Европа / Мир». Внутри каждой —
+   <b> название и <span> подпись.
+   Активное состояние .region.on — в css/state/_is-active.css.
+   ============================================================= */
+
+.regions
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.region
+{
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--dim);
+  cursor: pointer;
+  min-width: 132px;
+  text-align: left;
+  font: inherit;
+}
+
+.region b
+{
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.region span
+{
+  font-size: 11px;
+  opacity: .75;
+}

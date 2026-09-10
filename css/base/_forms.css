@@ -1,0 +1,41 @@
+/* =============================================================
+   BASE · Поля ввода
+   -------------------------------------------------------------
+   Общий вид <input> и <select> плюс единый фокус-контур
+   (в т.ч. для кнопок при навигации с клавиатуры).
+   ============================================================= */
+
+input,
+select
+{
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--text);
+  padding: 9px 12px;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+  max-width: 100%;
+}
+
+/* поле поиска тянется, занимая свободное место в строке инструментов */
+input
+{
+  flex: 1 1 220px;
+  min-width: 180px;
+}
+
+select
+{
+  color: var(--dim);
+}
+
+/* видимый фокус только с клавиатуры */
+input:focus,
+select:focus,
+button:focus-visible
+{
+  outline: 2px solid var(--cyan);
+  outline-offset: 1px;
+}

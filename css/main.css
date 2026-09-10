@@ -1,0 +1,55 @@
+/* =============================================================
+   ГЛАВНЫЙ ФАЙЛ СТИЛЕЙ
+   -------------------------------------------------------------
+   Собирает все части в порядке SMACSS. Правила ниже по списку
+   могут переопределять правила выше, поэтому порядок важен:
+
+     1. theme   — переменные (палитра)
+     2. base    — голые теги (сброс, страница, текст, формы, таблицы)
+     3. layout  — крупные блоки страницы (контейнер, сетки)
+     4. modules — самостоятельные компоненты
+     5. state   — активные / выбранные состояния
+     6. layout/responsive — правки под узкие экраны (в самом конце)
+
+   В index.html подключается только этот файл:
+     <link rel="stylesheet" href="css/main.css">
+   ============================================================= */
+
+/* 1. THEME ---------------------------------------------------- */
+@import "theme/_colors.css";
+
+/* 2. BASE ---------------------------------------------------- */
+@import "base/_reset.css";
+@import "base/_page.css";
+@import "base/_typography.css";
+@import "base/_forms.css";
+@import "base/_tables.css";
+
+/* 3. LAYOUT ------------------------------------------------- */
+@import "layout/_wrap.css";
+@import "layout/_grid.css";
+
+/* 4. MODULES ---------------------------------------------------- */
+@import "modules/_intro.css";
+@import "modules/_mode-switch.css";
+@import "modules/_region-picker.css";
+@import "modules/_card.css";
+@import "modules/_facts.css";
+@import "modules/_chips.css";
+@import "modules/_toolbar.css";
+@import "modules/_role-card.css";
+@import "modules/_metrics.css";
+@import "modules/_sources.css";
+@import "modules/_modal.css";
+@import "modules/_notes.css";
+@import "modules/_skill.css";
+@import "modules/_pros-cons.css";
+@import "modules/_regbox.css";
+@import "modules/_track.css";
+
+/* 5. STATE ---------------------------------------------------- */
+@import "state/_is-active.css";
+@import "state/_rtl.css";
+
+/* 6. RESPONSIVE (в конце — переопределяет всё выше) ------------ */
+@import "layout/_responsive.css";

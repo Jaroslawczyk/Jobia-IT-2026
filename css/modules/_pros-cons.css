@@ -1,0 +1,64 @@
+/* =============================================================
+   MODULE · Плюсы и минусы + ключевые показатели
+   -------------------------------------------------------------
+   .pros / .cons — две колонки (зелёная и розовая) со списками.
+   .kv           — строка «ключ-значение» (доля рынка, число вакансий).
+   .big          — крупное число внутри .kv .box.
+   ============================================================= */
+
+.pros
+{
+  background: #08131B;
+  border: 1px solid rgba(124, 240, 138, .25);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.cons
+{
+  background: #190B14;
+  border: 1px solid rgba(255, 92, 154, .25);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.pros ul,
+.cons ul
+{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 7px;
+}
+
+.pros li,
+.cons li
+{
+  font-size: 13px;
+  line-height: 1.5;
+  display: flex;
+  gap: 8px;
+}
+
+/* --- строка показателей --- */
+.kv
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.kv .box
+{
+  flex: 1;
+  min-width: 150px;
+}
+
+.big
+{
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--lime);
+}

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Атлас IT — выбор класса</title>
+
+  <!--
+    Все стили собраны в одном файле-агрегаторе css/main.css,
+    который через @import подключает остальные части в порядке SMACSS
+    (theme → base → layout → modules → state → responsive).
+  -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <!-- ===================== РАЗМЕТКА ===================== -->
+  <!--
+    Разметка почти пустая: весь видимый контент JS вставляет в эти
+    контейнеры по id. Ниже указано, какая функция за что отвечает.
+  -->
+  <div class="wrap">
+
+    <!-- Верхняя строка: заголовок + переключатель языка (renderChrome) -->
+    <div class="topbar">
+      <div>
+        <div class="eyebrow">АТЛАС IT · 2025/2026</div>
+        <h1 id="h1"></h1>
+      </div>
+      <select id="lang" aria-label="language"></select>
+    </div>
+
+    <!-- Вводный текст и плашка-предупреждение (renderChrome) -->
+    <p class="lead" id="lead"></p>
+    <p class="notice" id="notice"></p>
+
+    <!-- Переключатель режимов «По направлениям / По технологиям» (renderChrome) -->
+    <div class="modes" id="modes"></div>
+
+    <!-- ---------- Режим «По направлениям» ---------- -->
+    <div id="rolesView">
+      <!-- Кнопки регионов (renderRegions) -->
+      <div class="regions" id="regions"></div>
+
+      <!-- Факты о выбранном рынке (renderRegions) -->
+      <div class="card facts">
+        <h3 id="factsTitle"></h3>
+        <ul id="factsList"></ul>
+      </div>
+
+      <!-- Чипы-фильтры по группам направлений (renderCats) -->
+      <div class="chips" id="cats"></div>
+
+      <!-- Строка инструментов: поиск, фильтр по технологии, сортировка, сброс -->
+      <div class="tools">
+        <input id="q">
+        <select id="tech"></select>
+        <select id="sort"></select>
+        <button class="reset" id="reset"></button>
+      </div>
+
+      <!-- Вторая строка инструментов: фильтры и выбор валюты (renderChrome) -->
+      <div class="tools" id="tools2">
+        <select id="fai"></select>
+        <select id="fentry"></select>
+        <select id="flearn"></select>
+        <select id="cur"></select>
+      </div>
+
+      <!-- Счётчик и сетка карточек направлений (renderGrid) -->
+      <div class="count" id="count"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+
+    <!-- ---------- Режим «По технологиям» ---------- -->
+    <div id="techView" style="display:none">
+      <!-- Чипы-фильтры по типу технологии (renderKinds) -->
+      <div class="chips" id="kinds"></div>
+
+      <!-- Поиск и фильтры по технологиям (renderChrome) -->
+      <div class="tools">
+        <input id="tq">
+        <select id="tgroup"></select>
+        <select id="tsort"></select>
+      </div>
+
+      <!-- Счётчик и сетка карточек технологий (renderTech) -->
+      <div class="count" id="tcount"></div>
+      <div class="grid" id="tgrid"></div>
+    </div>
+
+    <!-- Блок «Источники» (renderChrome) -->
+    <div class="card sources" id="sources"></div>
+  </div>
+
+  <!-- Модальное окно карточки направления (renderModal наполняет #modal) -->
+  <div class="ov" id="ov">
+    <div class="modal" id="modal"></div>
+  </div>
+
+  <!-- ===================== СКРИПТЫ ===================== -->
+  <!--
+    Обычные (не module) скрипты: работают при открытии файла напрямую
+    (file://), делят общую глобальную область видимости — как в исходнике.
+    Порядок подключения = порядок зависимостей, менять нельзя:
+
+      1) js/data/*      — «сырые» данные и переводы
+      2) js/core/*      — состояние, сборка данных, утилиты, локализация
+      3) js/render/*    — функции отрисовки
+      4) js/main.js     — обработчики событий и первый рендер
+  -->
+
+  <!-- 1. Данные -->
+  <script src="js/data/config.js"></script>
+  <script src="js/data/currency.js"></script>
+  <script src="js/data/learning.js"></script>
+  <script src="js/data/roles.js"></script>
+  <script src="js/data/regions.js"></script>
+  <script src="js/data/role-extra.js"></script>
+  <script src="js/data/alternatives.js"></script>
+  <script src="js/data/ai-risk.js"></script>
+  <script src="js/data/tools-hardware.js"></script>
+  <script src="js/data/tracks.js"></script>
+  <script src="js/data/frameworks.js"></script>
+  <script src="js/data/technologies.js"></script>
+  <script src="js/data/day-in-life.js"></script>
+
+  <!-- 1a. Данные · переводы (базовые ru/en/pl; прочие языки грузятся лениво) -->
+  <script src="js/data/i18n/registry.js"></script>
+  <script src="js/data/i18n/ui-strings.js"></script>
+  <script src="js/data/i18n/langs.js"></script>
+  <script src="js/data/i18n/roles-en.js"></script>
+  <script src="js/data/i18n/roles-pl.js"></script>
+  <script src="js/data/i18n/kinds.js"></script>
+  <script src="js/data/i18n/tech-i18n.js"></script>
+  <script src="js/data/i18n/facts-i18n.js"></script>
+  <script src="js/data/i18n/sources.js"></script>
+
+  <!-- 2. Ядро -->
+  <script src="js/core/state.js"></script>
+  <script src="js/core/data-assembly.js"></script>
+  <script src="js/core/helpers.js"></script>
+  <script src="js/core/i18n.js"></script>
+  <script src="js/core/metrics.js"></script>
+
+  <!-- 2a. Полный английский перевод (дополняет TL.en глубокими разделами;
+       en — универсальный фолбэк, поэтому грузится сразу). Разбит на части
+       по объёму: en.js — разработка, en-2.js — данные/инфра/безопасность,
+       en-3.js — продукт/enterprise + alt + флаг ready:"full". -->
+  <script src="js/i18n/en.js"></script>
+  <script src="js/i18n/en-2.js"></script>
+  <script src="js/i18n/en-3.js"></script>
+
+  <!-- 3. Отрисовка -->
+  <script src="js/render/chrome.js"></script>
+  <script src="js/render/regions.js"></script>
+  <script src="js/render/categories.js"></script>
+  <script src="js/render/role-grid.js"></script>
+  <script src="js/render/modal-tabs.js"></script>
+  <script src="js/render/modal.js"></script>
+  <script src="js/render/tech-view.js"></script>
+
+  <!-- 4. Точка входа -->
+  <script src="js/main.js"></script>
+</body>
+</html>

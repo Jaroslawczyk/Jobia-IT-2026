@@ -1,0 +1,37 @@
+/* =============================================================
+   MODULE · Чипы-фильтры
+   -------------------------------------------------------------
+   Скруглённые кнопки-теги: фильтр по группе направлений,
+   по типу технологии, а также вкладки внутри модального окна.
+   Цвет активного чипа задаётся инлайном из JS (под цвет группы);
+   общее активное состояние .chip.on — в css/state/_is-active.css.
+   ============================================================= */
+
+.chips
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.chip
+{
+  padding: 5px 12px;
+  font-size: 12px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--dim);
+  cursor: pointer;
+  white-space: nowrap;
+  font: inherit;
+}
+
+/* счётчик внутри чипа */
+.chip small
+{
+  opacity: .7;
+  margin-left: 5px;
+}

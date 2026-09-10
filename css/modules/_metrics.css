@@ -1,0 +1,111 @@
+/* =============================================================
+   MODULE · Показатели на карточке
+   -------------------------------------------------------------
+   .vac      — заметная плашка с числом вакансий.
+   .lt       — строка с оценкой времени изучения
+               («с нуля …» / «со сменой стека …»).
+   .lt--sm   — уменьшенный вариант для списка навыков.
+   .leads    — колонка ссылок «куда ведёт» в режиме технологий.
+   .rolechip.lead — расширенный чип: название + зарплата и вакансии.
+   #tools2   — вторая строка инструментов (фильтры, валюта).
+   ============================================================= */
+
+/* --- число вакансий --- */
+.vacs
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-self: flex-start;
+}
+
+.vac
+{
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--lime);
+  background: rgba(124, 240, 138, .12);
+  border: 1px solid rgba(124, 240, 138, .35);
+}
+
+/* Варшава — приглушённый янтарный, чтобы отличать от общепольского */
+.vac--waw
+{
+  color: var(--amber);
+  background: rgba(255, 198, 92, .10);
+  border-color: rgba(255, 198, 92, .32);
+}
+
+/* --- время изучения --- */
+.lt
+{
+  display: block;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--dim);
+}
+
+.lt b
+{
+  color: var(--text);
+  font-weight: 600;
+}
+
+.lt-sep
+{
+  opacity: .5;
+}
+
+.lt--sm
+{
+  margin-left: auto;
+  text-align: right;
+  white-space: nowrap;
+  font-size: 10.5px;
+}
+
+/* --- «куда ведёт» в режиме технологий --- */
+.leads
+{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 6px;
+}
+
+.rolechip.lead
+{
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  align-items: flex-start;
+  line-height: 1.35;
+  padding: 7px 10px;
+  text-align: start;
+}
+
+.rolechip.lead b
+{
+  font-weight: 700;
+  color: var(--cyan);
+}
+
+.rolechip.lead small
+{
+  display: block;
+  color: var(--dim);
+  font-size: 10.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.lead-vac
+{
+  color: var(--lime) !important;
+}
+
+/* --- вторая строка инструментов --- */
+#tools2 select
+{
+  color: var(--text);
+}

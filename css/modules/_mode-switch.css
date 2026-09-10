@@ -1,0 +1,27 @@
+/* =============================================================
+   MODULE · Переключатель режимов
+   -------------------------------------------------------------
+   Две кнопки: «По направлениям» / «По технологиям».
+   Активное состояние .mode.on — в css/state/_is-active.css.
+   ============================================================= */
+
+.modes
+{
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.mode
+{
+  padding: 9px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--dim);
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+}

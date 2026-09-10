@@ -1,0 +1,55 @@
+/* =============================================================
+   MODULE · Ветка направления
+   -------------------------------------------------------------
+   .trk      — карточка одной ветки (специализации) во вкладке
+               «Ветки и стек»: название, описание (.d), польская
+               вилка (.p).
+   .rolechip — маленькая кнопка-ссылка на связанное направление
+               или технологию.
+   ============================================================= */
+
+.trk
+{
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: #08101E;
+}
+
+.trk b
+{
+  font-size: 13.5px;
+}
+
+.trk .d
+{
+  color: #C2D2EA;
+  font-size: 12.5px;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+.trk .p
+{
+  color: var(--lime);
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.rolechip
+{
+  font-size: 11.5px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 4px 8px;
+  color: var(--cyan);
+  cursor: pointer;
+  background: transparent;
+  font: inherit;
+}
+
+.rolechip:hover
+{
+  border-color: var(--cyan);
+}

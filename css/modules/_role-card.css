@@ -1,0 +1,164 @@
+/* =============================================================
+   MODULE · Карточка в сетке
+   -------------------------------------------------------------
+   Один блок .role в сетке .grid — направление или технология.
+   Внутренние элементы: .top (шапка), .nm (название), .tagx (тег
+   группы), .tg (краткое описание), .lvls/.lvl (уровни зарплат),
+   .line2 (мелкие пояснения), .techs/.tech (ключевые технологии),
+   .bars/.meter (индикаторы спроса, входа, риска ИИ).
+
+   Варианты тега технологии .tech.core / .tech.must — здесь же
+   (это не состояние, а разновидности элемента).
+   ============================================================= */
+
+.role
+{
+  background: linear-gradient(160deg, var(--panel2), var(--panel));
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.role:hover
+{
+  border-color: #2C4570;
+}
+
+.role .top
+{
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.role .nm
+{
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+/* тег группы направления в углу карточки */
+.tagx
+{
+  font-size: 10px;
+  border-radius: 6px;
+  padding: 2px 6px;
+  white-space: nowrap;
+}
+
+.role .tg
+{
+  color: var(--dim);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+/* --- уровни зарплат: junior / mid / senior --- */
+.lvls
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 6px;
+}
+
+.lvl
+{
+  background: #08101E;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 8px;
+}
+
+.lvl b
+{
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.lvl span
+{
+  color: var(--dim);
+  font-size: 10px;
+}
+
+/* мелкая строка пояснений под цифрами */
+.line2
+{
+  color: var(--dim);
+  font-size: 11.5px;
+  line-height: 1.5;
+}
+
+/* --- список ключевых технологий --- */
+.techs
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tech
+{
+  font-size: 10.5px;
+  color: var(--dim);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+
+.tech.core
+{
+  color: var(--mag);
+  border-color: rgba(255, 92, 154, .45);
+}
+
+.tech.must
+{
+  color: var(--cyan);
+  border-color: rgba(77, 232, 255, .35);
+}
+
+/* --- индикаторы внизу карточки --- */
+.bars
+{
+  display: flex;
+  gap: 14px;
+  align-items: flex-end;
+  margin-top: auto;   /* прижать к низу карточки */
+  padding-top: 4px;
+  flex-wrap: wrap;
+}
+
+.lbl
+{
+  color: var(--dim);
+  font-size: 10px;
+}
+
+.meter
+{
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+/* одно деление индикатора (закрашивается инлайном из JS) */
+.meter i
+{
+  width: 12px;
+  height: 5px;
+  border-radius: 2px;
+  background: #1C2B47;
+  display: block;
+}

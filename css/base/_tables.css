@@ -1,0 +1,48 @@
+/* =============================================================
+   BASE · Таблицы
+   -------------------------------------------------------------
+   Используются в модальном окне направления (вкладка «Зарплаты»).
+   Первая колонка — по левому краю, числовые — по правому,
+   моноширинные цифры для ровных столбцов.
+   ============================================================= */
+
+table
+{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th
+{
+  color: var(--dim);
+  font-size: 11px;
+  font-weight: 400;
+  text-align: right;
+  padding: 6px 0;
+}
+
+th:first-child
+{
+  text-align: left;
+}
+
+td
+{
+  font-size: 13px;
+  padding: 9px 0;
+  border-top: 1px solid var(--line);
+  text-align: right;
+  font-variant-numeric: tabular-nums; /* цифры одинаковой ширины */
+}
+
+td:first-child
+{
+  text-align: left;
+  font-variant-numeric: normal;
+}
+
+/* строки-примечания (средняя/максимум по объявлениям) — приглушены */
+tr.sub td
+{
+  color: var(--dim);
+}

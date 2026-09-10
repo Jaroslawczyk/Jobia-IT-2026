@@ -1,0 +1,30 @@
+/* =============================================================
+   BASE · Страница
+   -------------------------------------------------------------
+   Оформление <body>: тёмный фон с двумя цветными «свечениями»
+   в углах, базовый шрифт и цвет текста.
+   ============================================================= */
+
+body
+{
+  /* два радиальных пятна поверх сплошного фона --bg */
+  background:
+    radial-gradient(1100px 600px at 15% -5%, #10243D 0%, var(--bg) 55%),
+    radial-gradient(900px 500px at 95% 5%, #221033 0%, transparent 60%),
+    var(--bg);
+  background-attachment: fixed; /* фон не двигается при прокрутке */
+
+  color: var(--text);
+  min-height: 100vh;
+
+  /* латиница/кириллица + системные фолбэки для арабского, деванагари,
+     эфиопского письма и CJK (офлайн — то, что стоит в ОС) */
+  font-family:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    "Segoe UI Arabic", "Noto Sans Arabic", Tahoma,
+    "Nirmala UI", "Noto Sans Devanagari",
+    "Noto Sans Ethiopic", Nyala, Ebrima,
+    "Microsoft YaHei", "PingFang SC", "Noto Sans CJK SC",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}

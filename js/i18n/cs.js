@@ -14,7 +14,7 @@ TL["cs"] = {
     shown: "Zobrazeno", allDirs: "všechny směry", allKinds: "všechny typy",
     s_demand: "podle poptávky", s_salary: "podle senior platu", s_junior: "podle junior platu", s_share: "podle počtu nabídek", s_entry: "podle snadnosti vstupu", s_az: "abecedně",
     junior: "junior", mid: "mid", senior: "senior",
-    offers: "inzerátů v 2025", share: "trhu PL", demandL: "poptávka", entryL: "vstupní bariéra", aiL: "riziko AI",
+    offers: "aktivních nabídek nyní", share: "trhu PL", demandL: "poptávka", entryL: "vstupní bariéra", aiL: "riziko AI",
     t_about: "O třídě", t_day: "Jeden den", t_skills: "Dovednosti", t_stack: "Větve a stack", t_salary: "Platy", t_demand: "Nabídky a poptávka", t_ai: "Riziko nahrazení AI", t_pros: "Klady a zápory", t_passive: "Pasivka a ultimate",
     h_core: "Základ: bez toho nefunguje nic", h_must: "Povinné prostředí: zeptají se na pohovoru", h_good: "Co odlišuje mida od juniora", h_plus: "Bonus k nabídce",
     h_tools: "Potřebný hardware a nástroje", h_lang: "Jazyky a úrovně", h_certs: "Certifikace a jejich žebřík", h_accent: "Důraz lokálního trhu",

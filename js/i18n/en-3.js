@@ -6,7 +6,7 @@
   add("architect", {
     passive: ["Draws rectangles with arrows at every opportunity", "\"It depends\" is the universal answer"],
     ult: "Cloud + event-driven + the ability to count the system's money",
-    plYoy: "+5.3% UoP in 2025; the third year running as leader by upper median (No Fluff Jobs: 32k zł B2B)",
+    plYoy: "2025: +5.3% UoP; the top upper median for 3 years running. 2026: lost first place to ERP (No Fluff Jobs, Q1: B2B 27–32k, UoP 18–22k); theprotocol.it — 27,250 zł B2B, the highest of all specialisations",
     plNote: "The highest junior median in the industry — 14,000 zł, but a \"junior architect\" is really an experienced engineer. The B2B average is for 2024: justjoin.it doesn't publish it for 2025",
     eu: "Architects and staff engineers are the upper part of European bands: the staff-level median ≈ €115k (EuroTopTech 2026).",
     world: "US: architects per the Stack Overflow survey — $92–104k global medians, but noticeably higher in the US; at big tech staff/principal is the top range of the market.",
@@ -56,7 +56,7 @@
   add("pm", {
     passive: ["\"Let's lock that in\" — at every meeting", "The calendar is coloured in 40 shades"],
     ult: "A technical background + a certificate + experience with distributed teams",
-    plYoy: "+11.5% UoP, +8.0% B2B in 2025",
+    plYoy: "2025: +11.5% UoP, +8.0% B2B. 2026: steady demand, most openings in Warsaw — banks, telecom, consulting",
     plNote: "The highest junior median among non-technical roles — 10,750 zł",
     eu: "The role depends on language and time zone more than an engineering one: Polish or English at a negotiation level matters.",
     world: "Stack Overflow 2025: global medians for product/project roles $92–104k; noticeably higher in the US.",
@@ -106,7 +106,7 @@
   add("product", {
     passive: ["Calls everything a \"hypothesis\"", "Carries three conflicting priorities in their head"],
     ult: "Product thinking + data + technical literacy",
-    plYoy: "+11.5% UoP, +8.0% B2B (PM category)",
+    plYoy: "2025: +11.5% UoP, +8.0% B2B (PM category). 2026: the role exists mostly in product companies and fintech",
     plNote: "Counted within the PM category (5.80% of postings) — the figures in the table are from there",
     eu: "Product roles concentrate in product companies: Berlin, Amsterdam, London, Warsaw, Kraków.",
     world: "Stack Overflow 2025: the global product manager median ≈ $104k; substantially higher in the US.",
@@ -147,7 +147,7 @@
   add("ba", {
     passive: ["\"And what do we mean by the word customer?\""],
     ult: "Domain + SQL + the ability to write requirements you can code straight from",
-    plYoy: "+14.1% UoP, +7.1% B2B (Analytics category)",
+    plYoy: "2025: +14.1% UoP, +7.1% B2B (Analytics). 2026: No Fluff Jobs runs a separate Business Analysis category; main demand — Warsaw banks and SSCs",
     plNote: "The table uses Analytics-category figures; part of the roles are counted in PM (average 15,222 zł UoP). No Fluff Jobs keeps a separate Business Analysis category",
     eu: "In demand in banks, insurance and enterprise; the language of the client's country is often required.",
     world: "US: business/data analyst — average $100,956 (Stack Overflow 2025).",
@@ -188,7 +188,7 @@
   add("uxui", {
     passive: ["Fixes the spacing in other people's presentations", "Photographs bad signage at the airport"],
     ult: "A design system + research + accessibility in an enterprise product",
-    plYoy: "+7.0% UoP, +5.3% B2B in 2025; No Fluff Jobs recorded +33% on the lower employment-contract median",
+    plYoy: "2025: +7.0% UoP, +5.3% B2B; No Fluff Jobs: +33% on the lower UoP median. 2026: a pullback — UX −17% (No Fluff Jobs, Q1)",
     plNote: "Third from the bottom by average B2B rate in the industry",
     eu: "Product companies in Western Europe pay noticeably more than agencies; a lot of remote work.",
     world: "Design roles are consistently below engineering medians in surveys.",
@@ -243,7 +243,7 @@
   add("erp", {
     passive: ["Knows the difference between a delivery order and a purchase order, and explains it at family dinner"],
     ult: "S/4HANA + data migration + industry experience",
-    plYoy: "+7.3% UoP and +14.9% B2B — the best B2B growth in the industry in 2025",
+    plYoy: "2025: +7.3% UoP, +14.9% B2B. 2026: ERP is the best-paid specialisation (No Fluff Jobs, Q1): B2B 28,560–33,600 zł, UoP 18,000–24,800 zł; SAP S/4HANA in Warsaw 20–35k",
     plNote: "Real senior salaries are noticeably below advertised ones (−30% UoP): the bands in postings are inflated",
     eu: "S/4HANA migration deadlines keep demand up across Europe; a lot of business travel and international projects.",
     world: "The global enterprise-applications market is growing, SAP remains the centre of demand.",
@@ -293,7 +293,7 @@
   add("support", {
     passive: ["Can politely say \"try rebooting\" for the sixth time in a day"],
     ult: "In 1–2 years move into administration, DevOps or security — the band doubles",
-    plYoy: "−4.9% UoP (the worst result in the industry), +5.1% B2B; No Fluff Jobs records the upper employment-contract median rising to 12k zł",
+    plYoy: "2025: −4.9% UoP, +5.1% B2B; No Fluff Jobs: UoP bands +33–35%. 2026: stable, but first-line roles are automated fastest",
     plNote: "The lowest average rates in the whole industry on both UoP and B2B",
     eu: "International SSC/BPO centres in Poland actively hire people with foreign languages — often the way in for newcomers.",
     world: "US: sysadmin/support — the lower part of technical bands.",

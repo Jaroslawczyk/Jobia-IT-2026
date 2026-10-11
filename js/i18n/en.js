@@ -13,7 +13,7 @@
   add("frontend", {
     passive: ["A latte, a mechanical keyboard and \"maybe I'll move to backend later\"", "Arguing about whether the world needs one more state manager"],
     ult: "Next.js + TypeScript + a real understanding of the backend — turns you into a fullstack developer without changing job title",
-    plYoy: "+13.1% on employment contracts in 2025 — one of the fastest-growing categories",
+    plYoy: "2025: +13.1% UoP (JS). 2026: pure frontend fell to 3.4% of No Fluff Jobs postings (5% in 2024), 146 CVs per junior opening; JavaScript median range 18,480–23,117 zł (JobHunt)",
     plNote: "The reports have no separate \"Frontend\" category — figures are for the JS category (the largest on the market, 10.74% of postings)",
     eu: "Junior/mid frontend in the EU sits at the lower end of the general engineering band; senior in Western Europe rarely goes above the mid level of backend/platform roles.",
     world: "US: average $145,000 (Stack Overflow 2025, +7.4% on 2024). In Germany frontend is often paid on a par with fullstack (~€79.6k vs €75.4k).",
@@ -73,10 +73,10 @@
   add("backend", {
     passive: ["\"It's not a bug, it's eventual consistency\"", "Knows by heart how much one extra JOIN costs"],
     ult: "Java/C# + Kafka + Kubernetes in fintech or telecom — reliably the upper part of the band",
-    plYoy: "+8.8% UoP, +4.4% B2B in 2025",
+    plYoy: "2025: +8.8% UoP, +4.4% B2B (Java). 2026: the largest category — 17.5% of No Fluff Jobs postings (incl. PHP/Go/Ruby/Scala); B2B median 22,800 zł, +2.5% (theprotocol.it); per Antal, backend pay is under the strongest AI pressure",
     plNote: "Figures for the Java category (9.49% of postings). Adjacent stacks: .NET — 5.97%, Python — 5.38%, PHP — 2.68%, Go — 1.12%",
     eu: "Senior backend is the baseline for European bands: the senior median across Europe ≈ €88k, Switzerland ≈ €141k, the UK ≈ €116k, the Netherlands ≈ €102k (EuroTopTech 2026).",
-    world: "US: average $175,000 (Stack Overflow 2025). The BLS median for all software developers is $132,270 a year, employment ≈ 1.7 million.",
+    world: "US: average $175,000 (Stack Overflow 2025). The BLS median for all software developers is $135,980 a year, employment ≈ 1.69 million (May 2025).",
     stack: [
       { n: "One primary language", d: "Java, C#, Python, Go, Node.js or PHP — deeply, not superficially" },
       { n: "SQL + data model", d: "indexes, query plans, transactions, normalisation" },
@@ -91,7 +91,7 @@
     extra: {
       lang: "English B2 is required (documentation, review, distributed teams), C1 in consulting and on client projects. Polish B1+ is needed in banks, insurance and government contracts.",
       certs: ["Oracle Certified Professional Java SE — useful in enterprise", "Microsoft AZ-204 (Azure Developer) — for the .NET stack", "AWS Developer Associate → Solutions Architect Professional", "Kubernetes CKAD — a noticeable boost to pay"],
-      euPay: "Germany: experienced backend €62–92k gross, highest for Go, Rust and Python; SWE median Germany €81.5k, Netherlands €90k, Ireland €101k, senior across Europe ≈ €88k.",
+      euPay: "Germany: experienced backend €62–92k gross, highest for Go, Rust and Python; SWE median Germany €85.5k (levels.fyi, Oct 2026), Netherlands €90k, Ireland €101k, senior across Europe ≈ €88k.",
       euJobs: "10.45 million ICT specialists in the EU in 2025 (5% of all employment, Eurostat); backend is the largest engineering group within that number.",
       usPay: "Average $175,000 (Stack Overflow 2025).",
       usJobs: "Software developers: 1,687,890 employed, median $135,980, average $148,100 (BLS, May 2025); 10% growth and ~106,100 openings a year.",
@@ -136,7 +136,7 @@
   add("fullstack", {
     passive: ["Opens 14 tabs and keeps them for a week", "The phrase \"just wire up a button\" causes a nervous tic"],
     ult: "One language (TS) across the whole stack + infrastructure — delivery speed people pay for",
-    plYoy: "+13.1% UoP in 2025 (JS category)",
+    plYoy: "2025: +13.1% UoP (JS); No Fluff Jobs — 10.5% of postings. 2026: while frontend fell to 3.4%, Full-Stack stays among the three largest No Fluff Jobs categories with Backend and Data & BI",
     plNote: "There's no separate category: No Fluff Jobs gives fullstack 10.5% of postings. The table uses JS-category figures, which the bands are closest to",
     eu: "In Europe fullstack is usually paid slightly below pure backend, but above pure frontend; in Germany — €75.4k vs €79.6k for frontend (levels.fyi).",
     world: "US: median $138,000 (Stack Overflow 2025), the global developer median is $71,488.",
@@ -185,7 +185,7 @@
   add("mobile", {
     passive: ["Checks how the app looks on a stranger's phone in a café", "\"Works on my machine\" — but iOS 15 doesn't have it"],
     ult: "Native experience + Flutter in reserve: you cover both quality and speed",
-    plYoy: "+4.3% UoP, +3.8% B2B in 2025",
+    plYoy: "2025: +4.3% UoP, +3.8% B2B. 2026: the lower UoP band in Mobile fell by up to 21% (No Fluff Jobs, Q1)",
     plNote: "The ceiling is lower than in other categories: the mobile development market is already mature and standardised",
     eu: "Demand concentrates in banks, retail and product companies; in Western Europe the bands are close to backend.",
     world: "US: average $185,000 (Stack Overflow, 2024 cut) — one of the highest among development roles.",
@@ -241,7 +241,7 @@
   add("gamedev", {
     passive: ["Plays games \"to analyse references\"", "Knows why the build has 200,000 draw calls"],
     ult: "Multiplayer + engine-level C++: a narrow specialisation where the pay is grown-up",
-    plYoy: "+0.5% UoP, +7.9% B2B in 2025",
+    plYoy: "2025: +0.5% UoP, +7.9% B2B. 2026: no visible growth — the narrowest category on the market",
     plNote: "The lowest junior median in the entire industry and the lowest average B2B",
     eu: "Poland is one of Europe's largest game hubs (CD Projekt, Techland, People Can Fly), but the number of seats is limited; in Western Europe bands are higher, so is competition.",
     world: "The global market is cyclical: the 2023–2025 layoff waves sharply cut hiring at large studios.",
@@ -294,7 +294,7 @@
   add("embedded", {
     passive: ["Always has a screwdriver and a USB-UART in a pocket", "Thinks 4 KB of memory is a lot"],
     ult: "Automotive + functional safety: a narrow market where there are fewer candidates than openings",
-    plYoy: "−1.9% on both UoP and B2B — stable, no growth",
+    plYoy: "2025: −1.9% on both UoP and B2B. 2026: stable; R&D centres are in Kraków, Wrocław, Tricity and Łódź — Warsaw is not the leader here",
     plNote: "Category C in the justjoin.it report; in 2025 companies were looking for people in embedded, IoT, automotive and real-time",
     eu: "Germany, Sweden, the Czech Republic — the automotive and industrial cluster; embedded engineers there are in more stable demand than web.",
     world: "US: average $132,500 (Stack Overflow 2025, +1.9% on 2024).",
@@ -350,7 +350,7 @@
   add("desktop", {
     passive: ["Remembers what a COM object is, and regrets it"],
     ult: "C++/Qt in industry or finance — there are almost no competitors",
-    plYoy: "+3.1% UoP, −1.6% B2B in 2025 (.NET)",
+    plYoy: "2025: +3.1% UoP, −1.6% B2B (.NET). 2026: pure desktop is a niche of ≈1.5% of openings; the rest of .NET has moved to backend",
     plNote: "The reference is the .NET category (5.97% of postings); pure desktop is noticeably narrower",
     eu: "Demand in industry, medicine and finance; in Germany and Switzerland — stable, long contracts.",
     world: "US: average $128,000 (Stack Overflow 2025).",
@@ -390,7 +390,7 @@
   add("php", {
     passive: ["Justifies the choice of language on every call"],
     ult: "Symfony + e-commerce at scale, or a move to backend on another stack",
-    plYoy: "−1.2% UoP, +4.3% B2B in 2025",
+    plYoy: "2025: −1.2% UoP, +4.3% B2B. 2026: the trend is unchanged, ≈2.4% of openings",
     plNote: "The biggest gap between expectations and reality: juniors expect 68.1% more than is offered",
     eu: "A lot of agencies and outsourcing; bands lower than in product companies on other stacks.",
     world: "One of the most widespread languages in web, but in Stack Overflow surveys it's paid below the median.",
@@ -445,7 +445,7 @@
   add("go", {
     passive: ["`if err != nil` haunts my dreams"],
     ult: "Go + Kubernetes + distributed systems — the scarcest combination in Poland",
-    plYoy: "+35.7% UoP in 2025 — the absolute industry record",
+    plYoy: "2025: +35.7% UoP — an industry record. 2026: median range 21,840–28,000 zł, B2B up to 28,560 zł; Warsaw pays the most — average upper band 29,058 zł (JobHunt)",
     plNote: "There are almost no junior postings: the language is taken up after experience on another stack. The B2B average is for 2024; justjoin.it doesn't publish it for 2025",
     eu: "Infrastructure and cloud companies in Western Europe pay above the average engineering level.",
     world: "Go is consistently in the upper part of language pay rankings, especially at cloud-native companies.",
@@ -486,7 +486,7 @@
   add("scala", {
     passive: ["Explains monads in the kitchen and doesn't get why everyone left"],
     ult: "Scala + Spark + Kafka in a bank — a combination companies look for for years",
-    plYoy: "+58.8% UoP in 2025 — the record for growth rate",
+    plYoy: "2025: +58.8% UoP — the growth record. 2026: senior B2B median ≈27.5k zł",
     plNote: "Third from the bottom by number of postings and first by senior medians",
     eu: "Banks and telecom in Western Europe are the main employer; there are few roles, but they're long.",
     world: "The big-data-on-JVM niche rests on Spark; demand is shifting toward Python + a modern data stack.",
@@ -526,7 +526,7 @@
   add("ruby", {
     passive: ["Believes code should read like English text"],
     ult: "Rails + product thinking at a startup with remote work for Western Europe",
-    plYoy: "+9.0% UoP, −1.8% B2B in 2025",
+    plYoy: "2025: +9.0% UoP, −1.8% B2B. 2026: a niche of ≈0.5% of openings",
     plNote: "The biggest gap between postings and real salaries: seniors get 51.1% less than the posting median",
     eu: "Startups in Berlin, London and Amsterdam are the main market; a lot of remote work.",
     world: "Ruby lives in product companies (GitHub, Shopify), but fewer and fewer new projects start on it.",

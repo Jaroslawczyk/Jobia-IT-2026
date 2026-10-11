@@ -52,7 +52,8 @@ function renderTech(){
       ${techA(x)?`<span class="line2"><b>${t("h_alt")}:</b> ${esc(techA(x))}</span>`:""}
       <span class="lbl">${t("h_where")}</span>
       <span class="leads">${x.r.map(id=>{const r=ROLES.find(y=>y.id===id); if(!r) return "";
-        const jn=r.pl.jun&&r.pl.jun[0], md=r.pl.mid&&r.pl.mid[0], sn=r.pl.sen&&r.pl.sen[0];
+        const w0=state.region==="waw", lv=k=>w0?wawPay(r,k,0):(r.pl[k]&&r.pl[k][0]);
+        const jn=lv("jun"), md=lv("mid"), sn=lv("sen");
         const pay=(jn||md||sn)
           ? `${t("junior")} ${jn?money(jn):"—"} · ${t("mid")} ${md?money(md):"—"} · ${t("senior")} ${sn?money(sn):"—"}`
           : "";

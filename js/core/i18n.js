@@ -174,6 +174,7 @@ const trPlNote    = r => _packRole(r.id).plNote || _enRole(r.id).plNote || r.pl.
 const trPlYoy     = r => _packRole(r.id).plYoy  || _enRole(r.id).plYoy  || r.pl.yoy;
 const trEuText    = r => _packRole(r.id).eu     || _enRole(r.id).eu     || r.eu;
 const trWorldText = r => _packRole(r.id).world  || _enRole(r.id).world  || r.world;
+const trWawPay    = r => { const w = WAW_PAY[r.id]; return w ? (w[state.lang] || w.en || w.ru) : ""; };
 
 const kindName = k  => (_pack().kinds && _pack().kinds[k]) || (_enPack().kinds && _enPack().kinds[k]) || k;
 const catName  = id => (_pack().catn && _pack().catn[id]) || CATN.ru[id];

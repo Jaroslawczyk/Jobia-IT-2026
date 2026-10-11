@@ -14,7 +14,7 @@ TL["om"] = {
     shown: "Argisiifame", allDirs: "karaalee hunda", allKinds: "gosoota hunda",
     s_demand: "fedhiidhaan", s_salary: "mindaa senioriitiin", s_junior: "mindaa junioriitiin", s_share: "baay'ina hojiitiin", s_entry: "salphina seensaatiin", s_az: "qubeedhaan",
     junior: "junior", mid: "mid", senior: "senior",
-    offers: "beeksisa 2025 keessatti", share: "gabaa PL irraa", demandL: "fedhii", entryL: "gufuu seensaa", aiL: "balaa AI",
+    offers: "hojiiwwan amma banaa ta'an", share: "gabaa PL irraa", demandL: "fedhii", entryL: "gufuu seensaa", aiL: "balaa AI",
     t_about: "Waa'ee sadarkaa", t_day: "Guyyaa tokko", t_skills: "Dandeettii", t_stack: "Damee fi stack", t_salary: "Mindaa", t_demand: "Hojii fi fedhii", t_ai: "Balaa AI'n bakka bu'uu", t_pros: "Faayidaa fi hanqina", t_passive: "Passive fi ultimate",
     h_core: "Bu'uura: kanaan malee homtuu hin hojjetu", h_must: "Naannoo dirqama: gaaffii af-gaaffii keessatti gaafatama", h_good: "Wanti mid junior irraa adda baasu", h_plus: "Dabalata carraa hojii irratti",
     h_tools: "Meeshaalee fi hardware barbaachisan", h_lang: "Afaanotaa fi sadarkaa", h_certs: "Ragaalee fi sadarkaa isaanii", h_accent: "Xiyyeeffannaa gabaa naannoo",

@@ -6,7 +6,9 @@
    srcLabel — подпись источника цифр по Польше.
    meter    — полоска-индикатор из закрашенных делений.
    cut      — аккуратно обрезать длинный текст по границе предложения.
-   plCount / wawCount — расчёт числа вакансий по доле рынка.
+   plCount / wawCount — расчёт числа вакансий по доле рынка
+                        (Варшава — своя доля у каждого направления, r.pl.waw).
+   wawPay   — вилка для Варшавы: польская × коэффициент WAW_K.
    senior / junior   — быстрый доступ к зарплате для сортировки.
    ============================================================= */
 
@@ -20,5 +22,7 @@ const meter=(v,color,max)=>{max=max||5;let h='<span class="meter">';
 const cut=(s,n)=>{s=String(s||"");if(s.length<=n)return s;const p=s.slice(0,n);
   const k=Math.max(p.lastIndexOf(". "),p.lastIndexOf("; "));return k>40?p.slice(0,k+1):p.trim()+"…";};
 const plCount=r=>r.pl.share!=null?TOTAL_OFFERS*r.pl.share/100:null;
-const wawCount=r=>r.pl.share!=null?TOTAL_OFFERS*r.pl.share/100*WAW_SHARE:null;
+const wawCount=r=>r.pl.share!=null?TOTAL_OFFERS*r.pl.share/100*(r.pl.waw!=null?r.pl.waw:WAW_SHARE):null;
+// lvl: "jun" | "mid" | "sen", i: 0 = UoP, 1 = B2B
+const wawPay=(r,lvl,i)=>{const v=r.pl[lvl]&&r.pl[lvl][i];return v==null?null:Math.round(v*WAW_K[lvl][i]/50)*50;};
 const senior=r=>(r.pl.sen&&r.pl.sen[0])||0, junior=r=>(r.pl.jun&&r.pl.jun[0])||0;

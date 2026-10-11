@@ -14,7 +14,7 @@ TL["ti"] = {
     shown: "ተራእዩ", allDirs: "ኩሎም መንገድታት", allKinds: "ኩሎም ዓይነታት",
     s_demand: "ብድሌት", s_salary: "ብ ሲኒየር ደሞዝ", s_junior: "ብ ጁኒየር ደሞዝ", s_share: "ብ ቁጽሪ ክፉት ቦታ", s_entry: "ብ ቀሊልነት መእተዊ", s_az: "ብ ፊደል",
     junior: "ጁኒየር", mid: "ሚድ", senior: "ሲኒየር",
-    offers: "መወዓውዒ ኣብ 2025", share: "ካብ PL ዕዳጋ", demandL: "ድሌት", entryL: "ዕንቅፋት መእተዊ", aiL: "ናይ AI ሓደጋ",
+    offers: "ሕጂ ንጡፋት ክፉት ቦታታት", share: "ካብ PL ዕዳጋ", demandL: "ድሌት", entryL: "ዕንቅፋት መእተዊ", aiL: "ናይ AI ሓደጋ",
     t_about: "ብዛዕባ እቲ ደረጃ", t_day: "ሓደ መዓልቲ", t_skills: "ክእለታት", t_stack: "ጨናፍርን ስታክን", t_salary: "ደሞዝ", t_demand: "ክፉት ቦታታትን ድሌትን", t_ai: "ብ AI ናይ ምትካእ ሓደጋ", t_pros: "ጥቕምታትን ጉድለታትን", t_passive: "ፓሲቭን ኣልቲሜትን",
     h_core: "መሰረት፦ ብዘይኡ ዋላ ሓደ ኣይሰርሕን", h_must: "ግድን ዘድሊ ኣከባቢ፦ ኣብ ቃለ መሕትት ይሕተት", h_good: "ንሚድ ካብ ጁኒየር ዝፈሊ", h_plus: "ናብ እቲ ቅርቢ ተወሳኺ",
     h_tools: "ዘድልዩ ሃርድዌርን መሳርሒታትን", h_lang: "ቋንቋታትን ደረጃታትን", h_certs: "ምስክር ወረቓቕትን መሳልላቶምን", h_accent: "ትኹረት ናይ ከባቢ ዕዳጋ",

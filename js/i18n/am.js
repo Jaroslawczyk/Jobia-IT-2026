@@ -14,7 +14,7 @@ TL["am"] = {
     shown: "ታይቷል", allDirs: "ሁሉም መንገዶች", allKinds: "ሁሉም ዓይነቶች",
     s_demand: "በፍላጎት", s_salary: "በሲኒየር ደሞዝ", s_junior: "በጁኒየር ደሞዝ", s_share: "በክፍት ቦታ ብዛት", s_entry: "በመግቢያ ቀላልነት", s_az: "በፊደል",
     junior: "ጁኒየር", mid: "ሚድ", senior: "ሲኒየር",
-    offers: "ማስታወቂያዎች በ2025", share: "ከ PL ገበያ", demandL: "ፍላጎት", entryL: "የመግቢያ እንቅፋት", aiL: "የ AI ስጋት",
+    offers: "አሁን ንቁ ክፍት ቦታዎች", share: "ከ PL ገበያ", demandL: "ፍላጎት", entryL: "የመግቢያ እንቅፋት", aiL: "የ AI ስጋት",
     t_about: "ስለ ክፍሉ", t_day: "አንድ ቀን", t_skills: "ክህሎቶች", t_stack: "ቅርንጫፎች እና ስታክ", t_salary: "ደሞዝ", t_demand: "ክፍት ቦታዎች እና ፍላጎት", t_ai: "በ AI የመተካት ስጋት", t_pros: "ጥቅሞች እና ጉዳቶች", t_passive: "ፓሲቭ እና አልቲሜት",
     h_core: "መሠረት፦ ያለሱ ምንም አይሠራም", h_must: "የግድ የሚያስፈልግ አካባቢ፦ በቃለ መጠይቅ ይጠየቃል", h_good: "ሚድን ከጁኒየር የሚለየው", h_plus: "ለቅናሹ ጭማሪ",
     h_tools: "የሚያስፈልጉ ሃርድዌር እና መሣሪያዎች", h_lang: "ቋንቋዎች እና ደረጃዎች", h_certs: "ሰርተፍኬቶች እና ደረጃቸው", h_accent: "የአካባቢ ገበያ ትኩረት",

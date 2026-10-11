@@ -14,7 +14,7 @@ TL["fr"] = {
     shown: "Affiché", allDirs: "tous les parcours", allKinds: "tous les types",
     s_demand: "par demande", s_salary: "par salaire senior", s_junior: "par salaire junior", s_share: "par nombre d'offres", s_entry: "par facilité d'entrée", s_az: "alphabétique",
     junior: "junior", mid: "mid", senior: "senior",
-    offers: "offres en 2025", share: "du marché PL", demandL: "demande", entryL: "barrière d'entrée", aiL: "risque IA",
+    offers: "offres actives maintenant", share: "du marché PL", demandL: "demande", entryL: "barrière d'entrée", aiL: "risque IA",
     t_about: "À propos", t_day: "Une journée", t_skills: "Compétences", t_stack: "Branches & stack", t_salary: "Salaire", t_demand: "Offres & demande", t_ai: "Risque de remplacement par l'IA", t_pros: "Avantages & inconvénients", t_passive: "Passif & ultime",
     h_core: "Fondation : rien ne marche sans ça", h_must: "Environnement requis : on vous interrogera dessus", h_good: "Ce qui distingue le mid du junior", h_plus: "Bonus à l'offre",
     h_tools: "Matériel et outils nécessaires", h_lang: "Langues et niveaux", h_certs: "Certifications et leur échelle", h_accent: "Accent du marché local",

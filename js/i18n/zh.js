@@ -14,7 +14,7 @@ TL["zh"] = {
     shown: "显示", allDirs: "全部方向", allKinds: "全部类型",
     s_demand: "按需求", s_salary: "按高级薪资", s_junior: "按初级薪资", s_share: "按岗位数量", s_entry: "按入门难度", s_az: "按字母",
     junior: "初级", mid: "中级", senior: "高级",
-    offers: "个 2025 年岗位", share: "波兰市场占比", demandL: "需求", entryL: "入门门槛", aiL: "AI 风险",
+    offers: "个当前在招岗位", share: "波兰市场占比", demandL: "需求", entryL: "入门门槛", aiL: "AI 风险",
     t_about: "概述", t_day: "一天", t_skills: "技能", t_stack: "分支与技术栈", t_salary: "薪资", t_demand: "岗位与需求", t_ai: "被 AI 取代的风险", t_pros: "优点与缺点", t_passive: "被动技能与大招",
     h_core: "基础：没有它一切都无法运转", h_must: "必备环境：面试会问到", h_good: "区分中级与初级的东西", h_plus: "offer 加分项",
     h_tools: "所需的硬件和工具", h_lang: "语言和水平", h_certs: "认证及其阶梯", h_accent: "本地市场的侧重点",

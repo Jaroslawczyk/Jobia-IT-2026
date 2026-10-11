@@ -28,7 +28,7 @@ const EXTRA = {
    "AWS Developer Associate → Solutions Architect Professional",
    "Kubernetes CKAD — заметный плюс к вилке"
   ],
-  "euPay": "Германия: опытный backend €62–92k брутто, выше всего у Go, Rust и Python; медиана SWE Германия €81,5k, Нидерланды €90k, Ирландия €101k, senior по Европе ≈ €88k.",
+  "euPay": "Германия: опытный backend €62–92k брутто, выше всего у Go, Rust и Python; медиана SWE Германия €85,5k (levels.fyi, окт. 2026), Нидерланды €90k, Ирландия €101k, senior по Европе ≈ €88k.",
   "euJobs": "10,45 млн ICT-специалистов в ЕС в 2025 (5% всей занятости, Eurostat); backend — крупнейшая инженерная группа внутри этого числа.",
   "usPay": "Средняя $175 000 (Stack Overflow 2025).",
   "usJobs": "Software developers: 1 687 890 занятых, медиана $135 980, средняя $148 100 (BLS, май 2025); рост 10% и ~106 100 вакансий в год.",

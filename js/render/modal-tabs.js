@@ -36,10 +36,14 @@ function salaryTable(r){
 const regBlock=(id,title,html)=>`<div class="regbox ${state.region===id?"now":""}"><h5>${title}</h5><div class="t">${html}</div></div>`;
 
 function salaryAll(r){
+  const cell=(k,i)=>{const v=wawPay(r,k,i);return v!=null?"≈ "+money(v):"—";};
   const waw=r.pl.approx?`<div>${esc(r.pl.approx)}</div>`:
-    `<div>${t("junior")} <b class="u">${r.pl.jun&&r.pl.jun[0]?money(r.pl.jun[0]):"—"}</b> · ${t("mid")} <b class="u">${r.pl.mid&&r.pl.mid[0]?money(r.pl.mid[0]):"—"}</b> · ${t("senior")} <b class="u">${r.pl.sen&&r.pl.sen[0]?money(r.pl.sen[0]):"—"}</b></div>`;
+    `<table><tr><th>${t("wawEst")}</th><th>UoP</th><th>B2B</th></tr>${[["junior","jun"],["mid","mid"],["senior","sen"]].map(([l,k])=>
+      `<tr><td>${t(l)}</td><td class="u">${cell(k,0)}</td><td class="b">${cell(k,1)}</td></tr>`).join("")}</table>`;
+  const anchor=trWawPay(r);
   return regBlock("pl",t("pl"),salaryTable(r))
-   +regBlock("waw",t("waw"),waw+`<div class="fine">${t("fn_waw_pay")}</div><div class="fine">${esc(trExtra(r,"wawNote")||"")}</div>`)
+   +regBlock("waw",t("waw"),waw+(anchor?`<div class="note">${esc(anchor)}</div>`:"")
+      +`<div class="fine">${t("fn_waw_pay")}</div><div class="fine">${esc(trExtra(r,"wawNote")||"")}</div>`)
    +regBlock("eu",t("eu"),esc(trExtra(r,"euPay"))+`<div class="fine">${t("fn_eu_pay")}</div>`)
    +regBlock("world",t("world"),esc(trExtra(r,"usPay"))+`<div class="fine">${t("fn_world_pay")}</div>`);
 }
@@ -49,10 +53,11 @@ function demandAll(r){
   return regBlock("pl",t("pl"),`<div class="kv">
       <div class="box"><span class="lbl">${t("share")}</span><div class="big">${r.pl.share!=null?r.pl.share+"%":"—"}</div></div>
       <div class="box"><span class="lbl">${t("offers")}</span><div class="big">${pc?"≈ "+fmt(pc):"—"}</div></div>
-      <div class="box" style="flex:2"><span class="lbl">2025</span><div style="font-size:13px;margin-top:4px;line-height:1.5">${esc(trPlYoy(r))}</div></div>
+      <div class="box" style="flex:2"><span class="lbl">2025 → 2026</span><div style="font-size:13px;margin-top:4px;line-height:1.5">${esc(trPlYoy(r))}</div></div>
     </div><div class="fine">${t("fn_demand_pl")}</div>`)
    +regBlock("waw",t("waw"),`<div class="kv"><div class="box"><span class="lbl">${t("offers")}</span><div class="big">${wc?"≈ "+fmt(wc):"—"}</div></div>
-      <div class="box" style="flex:2"><span class="lbl">${t("lbl_capshare")}</span><div style="font-size:13px;margin-top:4px;line-height:1.5">${t("fn_waw_jobs")}</div></div></div>
+      <div class="box"><span class="lbl">${t("lbl_capshare")}</span><div class="big">${r.pl.share!=null?Math.round((r.pl.waw!=null?r.pl.waw:WAW_SHARE)*100)+"%":"—"}</div></div>
+      <div class="box" style="flex:2"><div style="font-size:13px;margin-top:4px;line-height:1.5">${t("fn_waw_jobs")}</div></div></div>
       <div class="t">${esc(trExtra(r,"wawNote")||"")}</div><div class="fine">${t("fn_waw_jobs2")}</div>`)
    +regBlock("eu",t("eu"),esc(trExtra(r,"euJobs"))+`<div class="fine">${t("fn_eu_jobs")}</div>`)
    +regBlock("world",t("world"),esc(trExtra(r,"usJobs"))+`<div class="fine">${t("fn_world_jobs")}</div>`);

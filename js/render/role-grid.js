@@ -50,9 +50,12 @@ function visible(){
 function cardMoney(r){
   if(state.region==="pl"||state.region==="waw"){
     if(r.pl.approx) return `<div class="line2">${esc(cut(r.pl.approx,120))}</div>`;
-    const cell=(k,v)=>`<div class="lvl"><span>${t(k)}</span><b class="u">${v&&v[0]!=null?money(v[0]):"—"}</b></div>`;
-    return `<div class="lvls">${cell("junior",r.pl.jun)}${cell("mid",r.pl.mid)}${cell("senior",r.pl.sen)}</div>
-      <div class="line2">UoP · B2B +10–25%${r.pl.share!=null?` · ${r.pl.share}% ${t("share")}`:""}</div>`;
+    const waw=state.region==="waw";
+    // для Варшавы — польская медиана × столичный коэффициент (WAW_K)
+    const val=k=>waw?wawPay(r,k,0):(r.pl[k]&&r.pl[k][0]);
+    const cell=(lbl,k)=>{const v=val(k);return `<div class="lvl"><span>${t(lbl)}</span><b class="u">${v!=null?(waw?"≈ ":"")+money(v):"—"}</b></div>`;};
+    return `<div class="lvls">${cell("junior","jun")}${cell("mid","mid")}${cell("senior","sen")}</div>
+      <div class="line2">UoP · B2B +10–25%${waw?` · ${t("wawEst")}`:""}${r.pl.share!=null?` · ${r.pl.share}% ${t("share")}`:""}</div>`;
   }
   const pay=state.region==="eu"?r.euPay:r.usPay, jobs=state.region==="eu"?r.euJobs:r.usJobs;
   return `<div class="line2" style="color:#C9D7EC">${esc(cut(pay,150))}</div><div class="line2">${esc(cut(jobs,110))}</div>`;

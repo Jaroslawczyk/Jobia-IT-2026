@@ -5,7 +5,7 @@
   add("data-eng", {
     passive: ["Turns every conversation into \"and how do we measure this\""],
     ult: "Spark + Databricks/Snowflake + governance — the combination companies looked for most in 2025",
-    plYoy: "+8.9% UoP, +9.2% B2B — one of the best growth rates of 2025",
+    plYoy: "2025: +8.9% UoP, +9.2% B2B; Data overtook JS by justjoin.it posting count for the first time (10.78%). 2026: Data is one of Warsaw's three growth areas; BigQuery 21,840–27,216 zł (JobHunt)",
     plNote: "By No Fluff Jobs the Data & BI category is 12.4% of all postings, second after backend",
     eu: "Data is the fastest-growing hiring segment in the EU; demand is amplified by regulation and cloud migration.",
     world: "US: average $150,000 (Stack Overflow 2025). BLS projects 34% employment growth for data scientists over 2024–2034 — faster than almost any profession.",
@@ -62,7 +62,7 @@
   add("data-analyst", {
     passive: ["Answers \"it depends how you count it\""],
     ult: "SQL + statistics + product thinking → an analyst who changes decisions, not one who draws charts",
-    plYoy: "+14.1% UoP, +7.1% B2B — one of the highest growth rates of 2025",
+    plYoy: "2025: +14.1% UoP, +7.1% B2B. 2026: Python (23%) and SQL (22%) are the most requested technologies in No Fluff Jobs postings",
     plNote: "The Analytics category in the justjoin.it report",
     eu: "The role exists at any company in any country — geographically the most flexible position in data.",
     world: "US: average data/business analyst — $100,956 (Stack Overflow 2025).",
@@ -118,7 +118,7 @@
   add("data-science", {
     passive: ["Starts with \"what data do we have?\" and ruins everyone's plans"],
     ult: "DS + deployment engineering: a model that actually works in production",
-    plYoy: "+8.9% UoP, +9.2% B2B (Data category)",
+    plYoy: "2025: +8.9% UoP, +9.2% B2B (Data). 2026: Data and AI are Warsaw growth areas (city report); AI/ML postings on justjoin.it more than tripled in Q1",
     plNote: "There's no separate category. The table uses Data-category figures; in AI/ML averages are slightly higher (16,400 UoP / 19,500 B2B)",
     eu: "Demand is shifting from \"pure\" DS to engineering roles: the model has to be taken to production.",
     world: "US: average $145,000 (Stack Overflow 2025), the BLS median is $108,020, projected employment growth +34% by 2034.",
@@ -167,7 +167,7 @@
   add("aiml", {
     passive: ["Counts token costs out loud", "Changes framework once a quarter"],
     ult: "ML + systems engineering: the one who takes a model to stable production, not the one who shows a demo",
-    plYoy: "The category grew more than fourfold over 2025; +15% to B2B",
+    plYoy: "2025: the category grew more than fourfold; +15% to B2B. 2026: AI/ML postings on justjoin.it more than tripled in Q1; senior 22,300–29,800 zł gross; 12.5% of all IT openings require AI/ML/LLM (JobHunt)",
     plNote: "The maximum advertised rate is 99,490 zł on B2B, an industry record",
     eu: "Poland is among the countries with the most AI specialists; foreign AI projects raise competition for people and rates.",
     world: "US: average $189,500 (Stack Overflow 2025). By industry reviews the average AI engineer compensation in 2025 exceeded $200,000.",
@@ -225,7 +225,7 @@
   add("mlops", {
     passive: ["Asks \"and how will you roll that back?\" at every demo"],
     ult: "Kubernetes + GPU + model quality monitoring",
-    plYoy: "grows in the wake of AI/ML",
+    plYoy: "grows in the wake of AI/ML; Antal 2026: senior MLOps 29–35k zł",
     plNote: "An estimate at the junction of AI/ML (avg 16,400 / 19,500) and DevOps (16,717 / 19,811); there's no separate category in the reports",
     eu: "One of the scarcest roles: the number of companies with models in production grows faster than the number of engineers.",
     world: "The market values MLOps close to senior DevOps and AI/ML: in the US it's the upper part of infrastructure bands.",
@@ -273,7 +273,7 @@
   add("devops", {
     passive: ["\"Works on my machine\" is a personal insult", "Automates a 3-hour task in 3 days"],
     ult: "Kubernetes + Terraform + cloud + understanding infrastructure cost",
-    plYoy: "+6.7% UoP, +4.0% B2B in 2025",
+    plYoy: "2025: +6.7% UoP, +4.0% B2B. 2026: mid 19–24k, senior 24–31k zł, B2B median 28,425 zł (JobHunt); No Fluff Jobs — 7.8% of postings",
     plNote: "No Fluff Jobs: 7.8% of all postings, the upper B2B median — 28,560 zł",
     eu: "Cloud and DevOps are consistently among Europe's best-paid roles; a lot of remote contracts covering the whole EU.",
     world: "US: average $165,000 (Stack Overflow 2025, +13.8% in a year); cloud engineers — $189,000.",
@@ -331,7 +331,7 @@
   add("sre", {
     passive: ["Counts uptime in nines and worries about the third one"],
     ult: "Kubernetes + Go + an SLO culture",
-    plYoy: "+6.7% UoP, +4.0% B2B (DevOps)",
+    plYoy: "2025: +6.7% UoP, +4.0% B2B (DevOps). 2026: DevOps bands — mid 19–24k, senior 24–31k zł (JobHunt), SRE in the upper half",
     plNote: "Counted within the DevOps category (6.37% of postings); a senior SRE is usually in the upper part of that band",
     eu: "The role exists mostly at large product companies and banks in Western Europe.",
     world: "US: bands at the senior DevOps level and above; at big tech it's one of the best-paid engineering tracks.",
@@ -372,7 +372,7 @@
   add("cloud", {
     passive: ["Looks at the billing dashboard more often than at email"],
     ult: "AWS/Azure Professional + Terraform + FinOps",
-    plYoy: "+6.7% UoP, +4.0% B2B (DevOps category)",
+    plYoy: "2025: +6.7% UoP, +4.0% B2B (DevOps). 2026: AWS median range 23,000–28,560 zł (JobHunt); Antal: cloud architects 25–30k, network & cloud managers 31–39k zł",
     plNote: "There's no separate category. The table uses DevOps figures; cloud architects are closer to the Architecture category (average 20,264 zł UoP)",
     eu: "One of the most in-demand profiles in the EU; a lot of roles with full remote work inside the EU.",
     world: "US: average cloud engineer $189,000 (Stack Overflow 2025) — above backend and DevOps.",
@@ -422,7 +422,7 @@
   add("sysadmin", {
     passive: ["\"Have you rebooted?\" — and it works"],
     ult: "Kubernetes + cloud: a move to DevOps raises the band by half",
-    plYoy: "−1.5% UoP, +6.7% B2B in 2025",
+    plYoy: "2025: −1.5% UoP, +6.7% B2B. 2026: Warsaw's labour office records fewer postings for system administrators (June)",
     plNote: "The Admin category in the justjoin.it report",
     eu: "The role is gradually turning cloud-hybrid: fewer pure \"server\" admins are hired.",
     world: "US: average $83,000 (Stack Overflow 2025) — one of the lowest among technical roles.",
@@ -474,7 +474,7 @@
   add("network", {
     passive: ["The first thing it asks: \"did you check DNS?\""],
     ult: "CCNP + Python automation + cloud networking",
-    plYoy: "−1.5% UoP, +6.7% B2B (Admin)",
+    plYoy: "2025: −1.5% UoP, +6.7% B2B (Admin). 2026: stable; Antal — network & cloud managers 31–39k zł",
     plNote: "The reference is the Admin category (avg 13,542 UoP / 17,053 B2B); network engineers with a CCNP are usually above the middle of the band",
     eu: "Telecom, data centres and industry; demand is stable, but the role increasingly requires automation and cloud networks.",
     world: "BLS puts computer network architects among professions with above-average growth to 2034.",
@@ -523,7 +523,7 @@
   add("dba", {
     passive: ["Wakes up at the words \"we deleted it without a backup\""],
     ult: "PostgreSQL in depth + cloud managed services + a rehearsed disaster recovery",
-    plYoy: "stable",
+    plYoy: "stable; Warsaw's labour office expects strong 2026 demand for database experts",
     plNote: "There's no separate category; the references are Admin (13,542 / 17,053) and Data (15,792 / 19,880)",
     eu: "Banks, insurance, the EU public sector — where data can't be lost.",
     world: "A steady but non-growing profession: part of the work is taken by cloud managed services.",
@@ -572,7 +572,7 @@
   add("security", {
     passive: ["Reads other people's passwords on sticky notes and silently suffers", "Checks a link before clicking longer than it takes to read the email"],
     ult: "Cloud security + AppSec in the financial sector: the highest rates and the longest contracts",
-    plYoy: "+9.1% UoP, +8.9% B2B in 2025",
+    plYoy: "2025: +9.1% UoP, +8.9% B2B. 2026: medians 23.5–30.2k B2B / 20–25k UoP (No Fluff Jobs); Cyber is a Warsaw growth area; Antal: cybersecurity is among the pay-growth leaders",
     plNote: "Third by average B2B rate in the whole industry",
     eu: "NIS2 and DORA made security a mandatory cost line: demand holds even in a downturn.",
     world: "US: average $150,000 (Stack Overflow 2025), the BLS median for information security analysts is $120,360 (2024), projected growth +29% over 2024–2034 (one of the fastest-growing professions). ISC2 estimates the global gap at 4.8 million people.",
@@ -631,7 +631,7 @@
   add("grc", {
     passive: ["Asks for evidence for every \"yes, we've set that up\""],
     ult: "ISO 27001 lead auditor + an understanding of the technology",
-    plYoy: "grows under the pressure of NIS2 and DORA",
+    plYoy: "growing under NIS2 and DORA pressure; a CISO in Warsaw earns 35–50k zł gross (city report, 2026)",
     plNote: "There's no separate category; the reference is Security (avg 16,250 UoP / 20,465 B2B), GRC is usually slightly below engineering roles",
     eu: "EU directives create demand across all member states at once — a rare case of a synchronised market rise.",
     world: "The regulatory branch of security grows along with the overall workforce shortage in infosec.",
@@ -671,7 +671,7 @@
   add("qa-manual", {
     passive: ["Breaks other people's forms out of curiosity", "\"What if I type an emoji in here?\""],
     ult: "A move into automation: the same role, a band a third higher",
-    plYoy: "+3.2% on both UoP and B2B in 2025",
+    plYoy: "2025: +3.2% on both UoP and B2B. 2026: over half of Testing postings are mid, almost all the rest senior; junior openings are nearly gone",
     plNote: "The Testing category in the justjoin.it report; No Fluff Jobs gives 6.7% of postings",
     eu: "Manual testing is gradually shrinking: the market pays for automation.",
     world: "BLS puts software QA analysts and testers among professions with double-digit growth to 2034.",
@@ -720,7 +720,7 @@
   add("qa-auto", {
     passive: ["Writes a test for a bug before reporting it"],
     ult: "Playwright + CI/CD + load testing = a quality architect role",
-    plYoy: "+3.2% UoP and B2B in 2025 (Testing category)",
+    plYoy: "2025: +3.2% UoP and B2B (Testing). 2026: demand is shifting to automation; the whole Testing category is ≈6.8% of openings",
     plNote: "Not counted separately: the table uses Testing-category figures. Automation engineers are consistently in the upper half of these bands, manual testers in the lower",
     eu: "The SDET role in Western Europe is paid almost like a developer.",
     world: "Automation is the standard of mature teams; manual testing without code is losing market share.",

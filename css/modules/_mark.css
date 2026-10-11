@@ -5,6 +5,8 @@
    .star.on     — карточка отмечена «убрать».
    .role.marked — отмеченная карточка, когда отмеченные показаны.
    .markbtn     — кнопка в фильтрах: скрывать отмеченные или нет.
+   .star.fav    — жёлтая звёздочка «оставить» (избранное);
+   .markbtn.fav — кнопка «только избранные».
    ============================================================= */
 
 .star
@@ -17,6 +19,7 @@
   user-select: none;
 }
 
+.star { color: #FF4D5E77; }
 .star:hover { color: #FF7A6B; }
 .star.on { color: #FF4D5E; text-shadow: 0 0 8px #FF4D5E99; }
 
@@ -37,3 +40,10 @@
 
 .markbtn b { color: #FF4D5E; }
 .markbtn.on { border-color: #FF4D5E88; color: var(--text); }
+
+.star.fav { color: #FFC65C77; }
+.star.fav:hover { color: #FFD45C; }
+.star.fav.on { color: #FFC65C; text-shadow: 0 0 8px #FFC65C99; }
+.role.faved { border-color: #FFC65C88; }
+.markbtn.fav b { color: #FFC65C; }
+.markbtn.fav.on { border-color: #FFC65C88; color: var(--text); }

@@ -100,4 +100,9 @@ function renderMarkBtns(){
   for(const [id,n] of [["mark",nr],["tmark",nt]]){
     $(id).innerHTML=txt(n); $(id).classList.toggle("on",state.hideMarked); $(id).title=t("markBtnTip");
   }
+  const fr=[...state.fav].filter(k=>k.startsWith("r:")).length, ft=state.fav.size-fr;
+  for(const [id,n] of [["fav",fr],["tfav",ft]]){
+    $(id).innerHTML=`<b>★</b> ${t("onlyFav")}: ${state.onlyFav?t("on"):t("off")} (${n})`;
+    $(id).classList.toggle("on",state.onlyFav); $(id).title=t("favBtnTip");
+  }
 }

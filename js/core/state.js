@@ -22,6 +22,8 @@
    marked  — отмеченные «убрать» (красная звёздочка): ключи "r:<id>" / "t:<название>",
              хранятся в localStorage браузера
    hideMarked — скрывать отмеченные (true) или показывать их приглушёнными
+   fav     — избранное «оставить» (жёлтая звёздочка), те же ключи, localStorage
+   onlyFav — показывать только избранное, всё остальное убрать
    open    — id открытой карточки направления (или null)
    tab     — активная вкладка в модальном окне
 
@@ -63,6 +65,28 @@ function saveMarks() {
     localStorage.setItem(HIDE_KEY, state.hideMarked ? "1" : "0");
   } catch (e) { /* приватный режим — просто не сохраняем */ }
 }
+const FAV_KEY = "jobia.fav", ONLY_KEY = "jobia.onlyFav";
+state.fav = new Set((() => { try { return JSON.parse(localStorage.getItem(FAV_KEY)) || []; } catch (e) { return []; } })());
+state.onlyFav = (() => { try { return localStorage.getItem(ONLY_KEY) === "1"; } catch (e) { return false; } })();
+function saveFav() {
+  try {
+    localStorage.setItem(FAV_KEY, JSON.stringify([...state.fav]));
+    localStorage.setItem(ONLY_KEY, state.onlyFav ? "1" : "0");
+  } catch (e) { /* приватный режим — просто не сохраняем */ }
+}
 const isMarked = key => state.marked.has(key);
-function toggleMark(key) { state.marked.has(key) ? state.marked.delete(key) : state.marked.add(key); saveMarks(); }
-const starHtml = key => `<span class="star ${isMarked(key) ? "on" : ""}" data-star="${esc(key)}" role="button" title="${esc(t("markTip"))}">${isMarked(key) ? "★" : "☆"}</span>`;
+const isFav = key => state.fav.has(key);
+// красная и жёлтая отметки взаимоисключающие: ставим одну — снимаем другую
+function toggleMark(key) {
+  state.marked.has(key) ? state.marked.delete(key) : (state.marked.add(key), state.fav.delete(key));
+  saveMarks(); saveFav();
+}
+function toggleFav(key) {
+  state.fav.has(key) ? state.fav.delete(key) : (state.fav.add(key), state.marked.delete(key));
+  saveMarks(); saveFav();
+}
+// скрыть карточку? (только избранное / скрытие отмеченных)
+const hiddenByMarks = key => (state.onlyFav && !isFav(key)) || (state.hideMarked && isMarked(key));
+const starHtml = key =>
+  `<span class="star fav ${isFav(key) ? "on" : ""}" data-fav="${esc(key)}" role="button" title="${esc(t("favTip"))}">${isFav(key) ? "★" : "☆"}</span>` +
+  `<span class="star ${isMarked(key) ? "on" : ""}" data-star="${esc(key)}" role="button" title="${esc(t("markTip"))}">${isMarked(key) ? "★" : "☆"}</span>`;

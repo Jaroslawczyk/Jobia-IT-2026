@@ -56,8 +56,13 @@ $("reset").addEventListener("click",()=>{state.cat="all";state.q="";state.tech="
   $("q").value="";renderChrome();renderCats();renderGrid();});
 
 /* красная звёздочка: отметить «убрать» / снять отметку */
-function onStar(e){const s=e.target.closest("[data-star]");if(!s)return false;
-  e.stopPropagation();e.preventDefault();toggleMark(s.dataset.star);renderMarkBtns();renderGrid();renderTech();return true;}
+function onStar(e){const s=e.target.closest("[data-star],[data-fav]");if(!s)return false;
+  e.stopPropagation();e.preventDefault();
+  if(s.dataset.fav!=null) toggleFav(s.dataset.fav); else toggleMark(s.dataset.star);
+  renderMarkBtns();renderGrid();renderTech();return true;}
+function onFavBtn(){state.onlyFav=!state.onlyFav;saveFav();renderMarkBtns();renderGrid();renderTech();}
+$("fav").addEventListener("click",onFavBtn);
+$("tfav").addEventListener("click",onFavBtn);
 function onMarkBtn(){state.hideMarked=!state.hideMarked;saveMarks();renderMarkBtns();renderGrid();renderTech();}
 $("mark").addEventListener("click",onMarkBtn);
 $("tmark").addEventListener("click",onMarkBtn);

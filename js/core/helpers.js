@@ -13,6 +13,8 @@
    ============================================================= */
 
 const $ = id => document.getElementById(id);
+// навесить обработчик, если элемент есть (не роняет скрипт при устаревшем index.html из кэша)
+const on = (id, ev, fn) => { const el = $(id); if (el) el.addEventListener(ev, fn); };
 const fmt = n => n == null ? "—" : Math.round(n).toLocaleString("ru-RU");
 const esc = s => String(s == null ? "" : s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 const srcLabel={jjit:{t:"justjoin.it 2026",c:C.lime},nfj:{t:"No Fluff Jobs 2025/26",c:C.lime},

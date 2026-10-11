@@ -20,13 +20,13 @@ function renderChrome(){
   $("lead").textContent = t("lead");
   $("notice").textContent = (state.lang==="ru" || _pack().ready==="full") ? "" : t("notice");
   $("q").placeholder = t("search"); $("tq").placeholder = t("searchTech");
-  $("reset").textContent = t("reset");
+  $("reset").textContent = t("reset"); $("treset").textContent = t("reset");
 
   $("lang").innerHTML = LANGS.map(l=>`<option value="${l.code}" ${state.lang===l.code?"selected":""}>${l.name}</option>`).join("");
 
   $("sort").innerHTML = [["demand","s_demand"],["salary","s_salary"],["junior","s_junior"],
     ["share","s_share"],["entry","s_entry"],["ntech","s_ntech"],["az","s_az"]]
-    .map(([v,k])=>`<option value="${v}" ${state.sort===v?"selected":""}>${t(k)}</option>`).join("");
+    .map(([v,k])=>`<option value="${v}" ${state.sort===v?"selected":""}>${t("t_gsort")}: ${t(k)}</option>`).join("");
 
   $("tech").innerHTML = `<option value="all">${t("filterTech")}: ${t("allDirs")}</option>`+
     TECHS.map(x=>`<option value="${esc(x.n)}" ${state.tech===x.n?"selected":""}>${esc(x.n)}</option>`).join("");

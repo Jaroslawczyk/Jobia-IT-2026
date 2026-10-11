@@ -42,6 +42,9 @@ $("fntech").addEventListener("change",e=>{state.fNTech=e.target.value;renderGrid
 
 /* фильтры режима «По технологиям» */
 $("tgroup").addEventListener("change",e=>{state.tGroup=e.target.value;renderTech();});
+$("treset").addEventListener("click",()=>{state.kind="all";state.tq="";state.tGroup="all";state.tSort="name";
+  state.tVSum="all";state.tVAvg="all";state.tNRoles="all";state.tEntry="all";
+  $("tq").value="";renderChrome();renderKinds();renderTech();});
 $("tsort").addEventListener("change",e=>{state.tSort=e.target.value;renderTech();});
 $("tvsum").addEventListener("change",e=>{state.tVSum=e.target.value;renderTech();});
 $("tvavg").addEventListener("change",e=>{state.tVAvg=e.target.value;renderTech();});

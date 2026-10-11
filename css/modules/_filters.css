@@ -1,0 +1,114 @@
+/* =============================================================
+   MODULE · Панель фильтров
+   -------------------------------------------------------------
+   Одна схема для обоих режимов:
+     .frow    — главная строка: поиск (тянется) + сортировка (+ валюта)
+     .fgrid   — сетка фильтров одинаковой ширины
+     .fbar    — строка состояния: «Показано N / M» слева,
+                переключатели (★ избранные, ★ отмеченные, PL) и сброс справа
+   ============================================================= */
+
+.filters
+{
+  background: linear-gradient(160deg, var(--panel2), var(--panel));
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.frow
+{
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 10px;
+}
+
+/* в режиме направлений в главной строке ещё и валюта */
+.frow:has(#cur)
+{
+  grid-template-columns: minmax(0, 1fr) 260px 150px;
+}
+
+.frow input
+{
+  min-width: 0;
+  font-size: 15px;
+  padding: 11px 14px;
+}
+
+.fgrid
+{
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.filters select
+{
+  width: 100%;
+  min-width: 0;
+  text-overflow: ellipsis;
+}
+
+.fbar
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+.fbar .count
+{
+  margin: 0;
+  font-size: 13px;
+}
+
+.toggles
+{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.toggles .markbtn,
+.toggles .reset
+{
+  padding: 7px 12px;
+  font-size: 13px;
+  border-radius: 999px;
+}
+
+/* «сбросить» — второстепенное действие: отделено и без рамки */
+.toggles .reset
+{
+  border-color: transparent;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  margin-left: 6px;
+}
+
+.toggles .reset:hover { color: var(--text); }
+
+@media (max-width: 1000px)
+{
+  .fgrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px)
+{
+  .frow,
+  .frow:has(#cur) { grid-template-columns: 1fr 1fr; }
+  .frow input { grid-column: 1 / -1; }
+  .fgrid { grid-template-columns: 1fr 1fr; }
+  .fgrid > :last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .fbar { flex-direction: column; align-items: stretch; }
+  .toggles { justify-content: flex-start; }
+}

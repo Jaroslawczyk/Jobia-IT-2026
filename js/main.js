@@ -26,7 +26,7 @@ function applyLang(code){
 $("lang").addEventListener("change",e=>applyLang(e.target.value));
 $("modes").addEventListener("click",e=>{const b=e.target.closest("[data-m]");if(!b)return;state.mode=b.dataset.m;renderChrome();});
 $("regions").addEventListener("click",e=>{const b=e.target.closest("[data-r]");if(!b)return;
-  state.region=b.dataset.r;renderRegions();renderGrid();if(state.open)renderModal();});
+  state.region=b.dataset.r;renderRegions();renderGrid();renderTech();if(state.open)renderModal();});
 $("cats").addEventListener("click",e=>{const b=e.target.closest("[data-c]");if(!b)return;state.cat=b.dataset.c;renderCats();renderGrid();});
 $("kinds").addEventListener("click",e=>{const b=e.target.closest("[data-k]");if(!b)return;state.kind=b.dataset.k;renderKinds();renderTech();});
 $("q").addEventListener("input",e=>{state.q=e.target.value;renderGrid();});
@@ -38,16 +38,21 @@ $("sort").addEventListener("change",e=>{state.sort=e.target.value;renderGrid();}
 $("fai").addEventListener("change",e=>{state.fAi=e.target.value;renderGrid();});
 $("fentry").addEventListener("change",e=>{state.fEntry=e.target.value;renderGrid();});
 $("flearn").addEventListener("change",e=>{state.fLearn=e.target.value;renderGrid();});
+$("fntech").addEventListener("change",e=>{state.fNTech=e.target.value;renderGrid();});
 
 /* фильтры режима «По технологиям» */
 $("tgroup").addEventListener("change",e=>{state.tGroup=e.target.value;renderTech();});
 $("tsort").addEventListener("change",e=>{state.tSort=e.target.value;renderTech();});
+$("tvsum").addEventListener("change",e=>{state.tVSum=e.target.value;renderTech();});
+$("tvavg").addEventListener("change",e=>{state.tVAvg=e.target.value;renderTech();});
+$("tnroles").addEventListener("change",e=>{state.tNRoles=e.target.value;renderTech();});
+$("tentry").addEventListener("change",e=>{state.tEntry=e.target.value;renderTech();});
 
 /* выбор валюты — пересчитываем зарплаты в списке, техно-режиме и модалке */
 $("cur").addEventListener("change",e=>{state.cur=e.target.value;renderGrid();renderTech();if(state.open)renderModal();});
 
 $("reset").addEventListener("click",()=>{state.cat="all";state.q="";state.tech="all";state.sort="demand";
-  state.fAi="all";state.fEntry="all";state.fLearn="all";
+  state.fAi="all";state.fEntry="all";state.fLearn="all";state.fNTech="all";
   $("q").value="";renderChrome();renderCats();renderGrid();});
 
 $("grid").addEventListener("click",e=>{const b=e.target.closest("[data-id]");if(!b)return;

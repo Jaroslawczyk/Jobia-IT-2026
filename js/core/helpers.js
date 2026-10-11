@@ -25,4 +25,14 @@ const plCount=r=>r.pl.share!=null?TOTAL_OFFERS*r.pl.share/100:null;
 const wawCount=r=>r.pl.share!=null?TOTAL_OFFERS*r.pl.share/100*(r.pl.waw!=null?r.pl.waw:WAW_SHARE):null;
 // lvl: "jun" | "mid" | "sen", i: 0 = UoP, 1 = B2B
 const wawPay=(r,lvl,i)=>{const v=r.pl[lvl]&&r.pl[lvl][i];return v==null?null:Math.round(v*WAW_K[lvl][i]/50)*50;};
+/* диапазоны для фильтров: [id, от, до) */
+const RANGES={
+  vsum:[["1",0,1000],["2",1000,3000],["3",3000,5000],["4",5000,Infinity]],
+  vavg:[["1",0,500],["2",500,1000],["3",1000,1500],["4",1500,Infinity]],
+  nroles:[["1",1,2],["2",2,4],["3",4,6],["4",6,Infinity]],
+  ntech:[["1",0,4],["2",4,8],["3",8,Infinity]],
+  entry:[["low",0,2.5],["mid",2.5,3.5],["high",3.5,Infinity]],
+};
+const inRange=(kind,id,v)=>{const g=RANGES[kind].find(x=>x[0]===id);return !g||(v>=g[1]&&v<g[2]);};
+const roleVac=r=>state.region==="waw"?wawCount(r):plCount(r);
 const senior=r=>(r.pl.sen&&r.pl.sen[0])||0, junior=r=>(r.pl.jun&&r.pl.jun[0])||0;

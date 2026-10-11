@@ -35,6 +35,9 @@ function visible(){
     r=r.filter(x=>learnBucket(x)===state.fLearn);
   }
 
+  // фильтр по числу технологий направления
+  if(state.fNTech!=="all") r=r.filter(x=>inRange("ntech",state.fNTech,techsOfRole(x.id).length));
+
   // поиск по названию, тегу, описанию и стеку (учитывает текущий перевод)
   const s=state.q.trim().toLowerCase();
   if(s) r=r.filter(x=>(x.name+" "+tr(x,"name")+" "+x.tag+" "+tr(x,"tag")+" "+x.about+" "+tr(x,"about")+" "+trStack(x).map(y=>y.n+" "+y.d).join(" ")).toLowerCase().includes(s));
@@ -42,7 +45,7 @@ function visible(){
   // сортировка
   const by={demand:(a,b)=>b.demand-a.demand||senior(b)-senior(a),salary:(a,b)=>senior(b)-senior(a),
     junior:(a,b)=>junior(b)-junior(a),share:(a,b)=>(b.pl.share||0)-(a.pl.share||0),
-    entry:(a,b)=>a.entry-b.entry||b.demand-a.demand,az:(a,b)=>tr(a,"name").localeCompare(tr(b,"name"),state.lang)}[state.sort];
+    entry:(a,b)=>a.entry-b.entry||b.demand-a.demand,ntech:(a,b)=>techsOfRole(b.id).length-techsOfRole(a.id).length,az:(a,b)=>tr(a,"name").localeCompare(tr(b,"name"),state.lang)}[state.sort];
   return r.slice().sort(by);
 }
 

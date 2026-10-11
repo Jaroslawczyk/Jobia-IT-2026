@@ -16,6 +16,9 @@
    fAi     — фильтр по риску ИИ: all / low / mid / high
    fEntry  — фильтр по порогу входа: all / low / mid / high
    fLearn  — фильтр по времени изучения «с нуля»: all / 6 / 12 / 18 / 19
+   fNTech  — фильтр по числу технологий направления: all / low / mid / high
+   tVSum / tVAvg / tNRoles / tEntry — фильтры технологий: вакансии
+             (сумма по направлениям / среднее), число направлений, порог входа
    open    — id открытой карточки направления (или null)
    tab     — активная вкладка в модальном окне
 
@@ -38,6 +41,11 @@ let state = {
   fAi: "all",
   fEntry: "all",
   fLearn: "all",
+  fNTech: "all",
+  tVSum: "all",
+  tVAvg: "all",
+  tNRoles: "all",
+  tEntry: "all",
   open: null,
   tab: "about",
 };

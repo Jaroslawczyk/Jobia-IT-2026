@@ -25,7 +25,7 @@ function renderChrome(){
   $("lang").innerHTML = LANGS.map(l=>`<option value="${l.code}" ${state.lang===l.code?"selected":""}>${l.name}</option>`).join("");
 
   $("sort").innerHTML = [["demand","s_demand"],["salary","s_salary"],["junior","s_junior"],
-    ["share","s_share"],["entry","s_entry"],["az","s_az"]]
+    ["share","s_share"],["entry","s_entry"],["ntech","s_ntech"],["az","s_az"]]
     .map(([v,k])=>`<option value="${v}" ${state.sort===v?"selected":""}>${t(k)}</option>`).join("");
 
   $("tech").innerHTML = `<option value="all">${t("filterTech")}: ${t("allDirs")}</option>`+
@@ -51,6 +51,8 @@ function renderChrome(){
     ["18", t("lt_18")],
     ["19", t("lt_19")],
   ]);
+  $("fntech").innerHTML = optionList(state.fNTech, [["all",`${t("f_ntech")}: ${t("any")}`]].concat(
+    RANGES.ntech.map(([id,a,b])=>[id,`${t("f_ntech")}: ${b===Infinity?a+"+":a===0?t("upto")+" "+(b-1):a+"–"+(b-1)}`])));
 
   /* --- выбор валюты --- */
   $("cur").innerHTML = CURRENCY.list
@@ -64,6 +66,21 @@ function renderChrome(){
     ["name", `${t("t_gsort")}: ${t("gs_name")}`],
     ["roles", `${t("t_gsort")}: ${t("gs_roles")}`],
     ["pay", `${t("t_gsort")}: ${t("gs_pay")}`],
+    ["vsum", `${t("t_gsort")}: ${t("gs_vsum")}`],
+    ["vavg", `${t("t_gsort")}: ${t("gs_vavg")}`],
+    ["entry", `${t("t_gsort")}: ${t("gs_entry")}`],
+  ]);
+  // подпись диапазона: «до 1 000», «1 000–3 000», «5 000+»
+  const rng=(kind,label)=>[["all",`${label}: ${t("any")}`]].concat(RANGES[kind].map(([id,a,b])=>
+    [id,`${label}: ${b===Infinity?fmt(a)+"+":a===0?t("upto")+" "+fmt(b):b-a===1?fmt(a):fmt(a)+"–"+fmt(b-1)}`]));
+  $("tvsum").innerHTML   = optionList(state.tVSum, rng("vsum", t("t_vsum")));
+  $("tvavg").innerHTML   = optionList(state.tVAvg, rng("vavg", t("t_vavg")));
+  $("tnroles").innerHTML = optionList(state.tNRoles, rng("nroles", t("f_nroles")));
+  $("tentry").innerHTML  = optionList(state.tEntry, [
+    ["all", `${t("f_entry")}: ${t("any")}`],
+    ["low", `${t("f_entry")}: ${t("lvl_low")}`],
+    ["mid", `${t("f_entry")}: ${t("lvl_mid")}`],
+    ["high", `${t("f_entry")}: ${t("lvl_high")}`],
   ]);
 
   $("modes").innerHTML = [["roles","byRoles"],["tech","byTech"]]

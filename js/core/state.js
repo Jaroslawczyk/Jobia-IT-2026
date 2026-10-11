@@ -24,6 +24,7 @@
    hideMarked — скрывать отмеченные (true) или показывать их приглушёнными
    fav     — избранное «оставить» (жёлтая звёздочка), те же ключи, localStorage
    onlyFav — показывать только избранное, всё остальное убрать
+   plMode  — в регионе «Варшава» общепольские цифры на карточках: "dim" (приглушить) / "hide" (убрать)
    open    — id открытой карточки направления (или null)
    tab     — активная вкладка в модальном окне
 
@@ -90,3 +91,10 @@ const hiddenByMarks = key => (state.onlyFav && !isFav(key)) || (state.hideMarked
 const starHtml = key =>
   `<span class="star fav ${isFav(key) ? "on" : ""}" data-fav="${esc(key)}" role="button" title="${esc(t("favTip"))}">${isFav(key) ? "★" : "☆"}</span>` +
   `<span class="star ${isMarked(key) ? "on" : ""}" data-star="${esc(key)}" role="button" title="${esc(t("markTip"))}">${isMarked(key) ? "★" : "☆"}</span>`;
+
+/* ---------- регион «Варшава»: что делать с цифрами по всей Польше ---------- */
+const PLMODE_KEY = "jobia.plMode";
+state.plMode = (() => { try { return localStorage.getItem(PLMODE_KEY) === "hide" ? "hide" : "dim"; } catch (e) { return "dim"; } })();
+function savePlMode() { try { localStorage.setItem(PLMODE_KEY, state.plMode); } catch (e) {} }
+// обёртка для общепольской части на карточке: как есть / приглушить / убрать
+const plPart = html => state.region !== "waw" ? html : state.plMode === "hide" ? "" : `<span class="pl-dim">${html}</span>`;

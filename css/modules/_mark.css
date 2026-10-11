@@ -47,3 +47,7 @@
 .role.faved { border-color: #FFC65C88; }
 .markbtn.fav b { color: #FFC65C; }
 .markbtn.fav.on { border-color: #FFC65C88; color: var(--text); }
+
+/* Регион «Варшава»: общепольские цифры на карточках приглушены */
+.pl-dim { opacity: .35; filter: grayscale(.6); }
+.markbtn.plbtn b { color: var(--lime); }

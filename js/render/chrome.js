@@ -100,6 +100,11 @@ function renderMarkBtns(){
   for(const [id,n] of [["mark",nr],["tmark",nt]]){
     $(id).innerHTML=txt(n); $(id).classList.toggle("on",state.hideMarked); $(id).title=t("markBtnTip");
   }
+  for(const id of ["plmode","tplmode"]){
+    $(id).style.display=state.region==="waw"?"":"none";
+    $(id).innerHTML=`<b>PL</b> ${t("plOnCards")}: ${state.plMode==="hide"?t("plHidden"):t("plDimmed")}`;
+    $(id).classList.toggle("on",state.plMode==="hide"); $(id).title=t("plBtnTip");
+  }
   const fr=[...state.fav].filter(k=>k.startsWith("r:")).length, ft=state.fav.size-fr;
   for(const [id,n] of [["fav",fr],["tfav",ft]]){
     $(id).innerHTML=`<b>★</b> ${t("onlyFav")}: ${state.onlyFav?t("on"):t("off")} (${n})`;

@@ -61,7 +61,7 @@ function cardMoney(r){
     const val=k=>waw?wawPay(r,k,0):(r.pl[k]&&r.pl[k][0]);
     const cell=(lbl,k)=>{const v=val(k);return `<div class="lvl"><span>${t(lbl)}</span><b class="u">${v!=null?(waw?"≈ ":"")+money(v):"—"}</b></div>`;};
     return `<div class="lvls">${cell("junior","jun")}${cell("mid","mid")}${cell("senior","sen")}</div>
-      <div class="line2">UoP · B2B +10–25%${waw?` · ${t("wawEst")}`:""}${r.pl.share!=null?` · ${r.pl.share}% ${t("share")}`:""}</div>`;
+      <div class="line2">UoP · B2B +10–25%${waw?` · ${t("wawEst")}`:""}${r.pl.share!=null?plPart(` · ${r.pl.share}% ${t("share")}`):""}</div>`;
   }
   const pay=state.region==="eu"?r.euPay:r.usPay, jobs=state.region==="eu"?r.euJobs:r.usJobs;
   return `<div class="line2" style="color:#C9D7EC">${esc(cut(pay,150))}</div><div class="line2">${esc(cut(jobs,110))}</div>`;
@@ -73,7 +73,7 @@ function cardVac(r){
   const p=plCount(r), w=wawCount(r);
   if(!p) return "";
   return `<span class="vacs">
-    <span class="vac">PL ≈ ${fmt(p)} ${t("vac")}</span>
+    ${plPart(`<span class="vac">PL ≈ ${fmt(p)} ${t("vac")}</span>`)}
     <span class="vac vac--waw">${t("waw")} ≈ ${fmt(w)}</span></span>`;
 }
 

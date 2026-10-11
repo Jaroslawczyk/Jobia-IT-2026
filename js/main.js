@@ -26,7 +26,7 @@ function applyLang(code){
 $("lang").addEventListener("change",e=>applyLang(e.target.value));
 $("modes").addEventListener("click",e=>{const b=e.target.closest("[data-m]");if(!b)return;state.mode=b.dataset.m;renderChrome();});
 $("regions").addEventListener("click",e=>{const b=e.target.closest("[data-r]");if(!b)return;
-  state.region=b.dataset.r;renderRegions();renderGrid();renderTech();if(state.open)renderModal();});
+  state.region=b.dataset.r;renderRegions();renderMarkBtns();renderGrid();renderTech();if(state.open)renderModal();});
 $("cats").addEventListener("click",e=>{const b=e.target.closest("[data-c]");if(!b)return;state.cat=b.dataset.c;renderCats();renderGrid();});
 $("kinds").addEventListener("click",e=>{const b=e.target.closest("[data-k]");if(!b)return;state.kind=b.dataset.k;renderKinds();renderTech();});
 $("q").addEventListener("input",e=>{state.q=e.target.value;renderGrid();});
@@ -60,6 +60,9 @@ function onStar(e){const s=e.target.closest("[data-star],[data-fav]");if(!s)retu
   e.stopPropagation();e.preventDefault();
   if(s.dataset.fav!=null) toggleFav(s.dataset.fav); else toggleMark(s.dataset.star);
   renderMarkBtns();renderGrid();renderTech();return true;}
+function onPlBtn(){state.plMode=state.plMode==="hide"?"dim":"hide";savePlMode();renderMarkBtns();renderGrid();renderTech();}
+$("plmode").addEventListener("click",onPlBtn);
+$("tplmode").addEventListener("click",onPlBtn);
 function onFavBtn(){state.onlyFav=!state.onlyFav;saveFav();renderMarkBtns();renderGrid();renderTech();}
 $("fav").addEventListener("click",onFavBtn);
 $("tfav").addEventListener("click",onFavBtn);

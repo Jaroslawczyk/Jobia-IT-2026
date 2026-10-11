@@ -79,7 +79,7 @@ function renderTech(){
           ? `${t("junior")} ${jn?money(jn):"—"} · ${t("mid")} ${md?money(md):"—"} · ${t("senior")} ${sn?money(sn):"—"}`
           : "";
         const p=plCount(r), w=wawCount(r);
-        const vac=p?`PL ≈ ${fmt(p)} · ${t("waw")} ≈ ${fmt(w)}` : "";
+        const vac=p?(state.region==="waw"&&state.plMode==="hide"?"":plPart(`PL ≈ ${fmt(p)} · `))+`${t("waw")} ≈ ${fmt(w)}` : "";
         return `<button class="rolechip lead" data-id="${id}">
             <b>${tr(r,"name")}</b>
             ${pay?`<small class="lead-pay">${pay}</small>`:""}

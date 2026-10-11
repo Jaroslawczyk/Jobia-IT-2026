@@ -9,8 +9,8 @@
    Этот файл подключается ПОСЛЕДНИМ.
    ============================================================= */
 
-/* «сбросить фильтры»: возвращает фильтры, поиск и сортировку режима к исходным
-   и выключает «только избранные» (звёздочки при этом не снимаются) */
+/* «сбросить фильтры»: возвращает фильтры, поиск и сортировку режима к исходным,
+   снимает все звёздочки этого режима (жёлтые и красные) и выключает «только избранные» */
 function resetFilters(mode){
   if(mode==="roles"){
     Object.assign(state,{cat:"all",q:"",tech:"all",sort:"demand",fAi:"all",fEntry:"all",fLearn:"all",fNTech:"all"});
@@ -19,7 +19,9 @@ function resetFilters(mode){
     Object.assign(state,{kind:"all",tq:"",tGroup:"all",tSort:"name",tVSum:"all",tVAvg:"all",tNRoles:"all",tEntry:"all"});
     $("tq").value="";
   }
-  state.onlyFav=false; saveFav();
+  const pre=mode==="roles"?"r:":"t:";
+  for(const set of [state.fav,state.marked]) for(const k of [...set]) if(k.startsWith(pre)) set.delete(k);
+  state.onlyFav=false; saveFav(); saveMarks();
   renderAll();
 }
 

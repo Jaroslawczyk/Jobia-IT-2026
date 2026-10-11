@@ -19,6 +19,9 @@
    fNTech  — фильтр по числу технологий направления: all / low / mid / high
    tVSum / tVAvg / tNRoles / tEntry — фильтры технологий: вакансии
              (сумма по направлениям / среднее), число направлений, порог входа
+   marked  — отмеченные «убрать» (красная звёздочка): ключи "r:<id>" / "t:<название>",
+             хранятся в localStorage браузера
+   hideMarked — скрывать отмеченные (true) или показывать их приглушёнными
    open    — id открытой карточки направления (или null)
    tab     — активная вкладка в модальном окне
 
@@ -49,3 +52,17 @@ let state = {
   open: null,
   tab: "about",
 };
+
+/* ---------- отметки «убрать» (сохраняются в браузере) ---------- */
+const MARK_KEY = "jobia.marked", HIDE_KEY = "jobia.hideMarked";
+state.marked = new Set((() => { try { return JSON.parse(localStorage.getItem(MARK_KEY)) || []; } catch (e) { return []; } })());
+state.hideMarked = (() => { try { return localStorage.getItem(HIDE_KEY) !== "0"; } catch (e) { return true; } })();
+function saveMarks() {
+  try {
+    localStorage.setItem(MARK_KEY, JSON.stringify([...state.marked]));
+    localStorage.setItem(HIDE_KEY, state.hideMarked ? "1" : "0");
+  } catch (e) { /* приватный режим — просто не сохраняем */ }
+}
+const isMarked = key => state.marked.has(key);
+function toggleMark(key) { state.marked.has(key) ? state.marked.delete(key) : state.marked.add(key); saveMarks(); }
+const starHtml = key => `<span class="star ${isMarked(key) ? "on" : ""}" data-star="${esc(key)}" role="button" title="${esc(t("markTip"))}">${isMarked(key) ? "★" : "☆"}</span>`;

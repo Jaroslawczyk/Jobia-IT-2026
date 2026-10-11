@@ -35,6 +35,9 @@ function visible(){
     r=r.filter(x=>learnBucket(x)===state.fLearn);
   }
 
+  // отмеченные «убрать» — скрываем, если включено
+  if(state.hideMarked) r=r.filter(x=>!isMarked("r:"+x.id));
+
   // фильтр по числу технологий направления
   if(state.fNTech!=="all") r=r.filter(x=>inRange("ntech",state.fNTech,techsOfRole(x.id).length));
 
@@ -86,9 +89,9 @@ function renderGrid(){
   if(!list.length){$("grid").innerHTML=`<div style="color:${C.dim};padding:40px">—</div>`;return;}
   $("grid").innerHTML=list.map(r=>{
     const cat=catOf(r.cat), key=trStack(r).filter(s=>s.l==="core"||s.l==="must").slice(0,4);
-    return `<button class="role" data-id="${r.id}">
+    return `<button class="role ${isMarked("r:"+r.id)?"marked":""}" data-id="${r.id}">
       <span class="top"><span class="nm">${tr(r,"name")}</span>
-        <span class="tagx" style="color:${cat.color};border:1px solid ${cat.color}55">${catName(r.cat)}</span></span>
+        <span style="display:flex;gap:8px;align-items:center"><span class="tagx" style="color:${cat.color};border:1px solid ${cat.color}55">${catName(r.cat)}</span>${starHtml("r:"+r.id)}</span></span>
       <span class="tg">${tr(r,"tag")}</span>
       ${cardMoney(r)}
       ${cardVac(r)}

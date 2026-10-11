@@ -55,9 +55,16 @@ $("reset").addEventListener("click",()=>{state.cat="all";state.q="";state.tech="
   state.fAi="all";state.fEntry="all";state.fLearn="all";state.fNTech="all";
   $("q").value="";renderChrome();renderCats();renderGrid();});
 
-$("grid").addEventListener("click",e=>{const b=e.target.closest("[data-id]");if(!b)return;
+/* красная звёздочка: отметить «убрать» / снять отметку */
+function onStar(e){const s=e.target.closest("[data-star]");if(!s)return false;
+  e.stopPropagation();e.preventDefault();toggleMark(s.dataset.star);renderMarkBtns();renderGrid();renderTech();return true;}
+function onMarkBtn(){state.hideMarked=!state.hideMarked;saveMarks();renderMarkBtns();renderGrid();renderTech();}
+$("mark").addEventListener("click",onMarkBtn);
+$("tmark").addEventListener("click",onMarkBtn);
+
+$("grid").addEventListener("click",e=>{if(onStar(e))return;const b=e.target.closest("[data-id]");if(!b)return;
   state.open=b.dataset.id;state.tab="about";renderModal();});
-$("tgrid").addEventListener("click",e=>{const b=e.target.closest("[data-id]");if(!b)return;
+$("tgrid").addEventListener("click",e=>{if(onStar(e))return;const b=e.target.closest("[data-id]");if(!b)return;
   state.open=b.dataset.id;state.tab="about";renderModal();});
 $("modal").addEventListener("click",e=>{
   if(e.target.closest("#closeBtn")){state.open=null;renderModal();return;}

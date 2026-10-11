@@ -41,6 +41,8 @@ function renderTech(){
     list=list.filter(x=>x.r.some(id=>{const r=ROLES.find(y=>y.id===id);return r&&r.cat===state.tGroup;}));
   }
 
+  if(state.hideMarked) list=list.filter(x=>!isMarked("t:"+x.n));
+
   // фильтры: вакансии (сумма / среднее), число направлений, порог входа
   list=list.filter(x=>{const st=techStats(x);
     return inRange("vsum",state.tVSum,st.sum)&&inRange("vavg",state.tVAvg,st.avg)
@@ -62,9 +64,9 @@ function renderTech(){
   list=list.slice().sort(by);
 
   $("tcount").textContent=`${t("shown")} ${list.length} / ${TECHS.length}`;
-  $("tgrid").innerHTML=list.map(x=>`<div class="role" style="cursor:default">
+  $("tgrid").innerHTML=list.map(x=>`<div class="role ${isMarked("t:"+x.n)?"marked":""}" style="cursor:default">
       <span class="top"><span class="nm">${esc(x.n)}</span>
-        <span class="tagx" style="color:${C.amber};border:1px solid ${C.amber}55">${esc(kindName(x.k))}</span></span>
+        <span style="display:flex;gap:8px;align-items:center"><span class="tagx" style="color:${C.amber};border:1px solid ${C.amber}55">${esc(kindName(x.k))}</span>${starHtml("t:"+x.n)}</span></span>
       <span class="tg" style="color:#C2D2EA">${esc(techW(x))}</span>
       ${techP(x)?`<span class="line2" style="color:${C.lime}">${esc(techP(x))}</span>`:""}
       ${techA(x)?`<span class="line2"><b>${t("h_alt")}:</b> ${esc(techA(x))}</span>`:""}

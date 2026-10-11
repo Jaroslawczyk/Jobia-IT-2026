@@ -83,10 +83,21 @@ function renderChrome(){
     ["high", `${t("f_entry")}: ${t("lvl_high")}`],
   ]);
 
+  renderMarkBtns();
+
   $("modes").innerHTML = [["roles","byRoles"],["tech","byTech"]]
     .map(([v,k])=>`<button class="mode ${state.mode===v?"on":""}" data-m="${v}">${t(k)}</button>`).join("");
   $("rolesView").style.display = state.mode==="roles"?"":"none";
   $("techView").style.display  = state.mode==="tech"?"":"none";
 
   $("sources").innerHTML = langSources();
+}
+
+/* кнопки «★ отмеченные: скрыты / показаны (N)» в обоих режимах */
+function renderMarkBtns(){
+  const nr=[...state.marked].filter(k=>k.startsWith("r:")).length, nt=state.marked.size-nr;
+  const txt=n=>`<b>★</b> ${t("marked")}: ${state.hideMarked?t("markHidden"):t("markShown")} (${n})`;
+  for(const [id,n] of [["mark",nr],["tmark",nt]]){
+    $(id).innerHTML=txt(n); $(id).classList.toggle("on",state.hideMarked); $(id).title=t("markBtnTip");
+  }
 }

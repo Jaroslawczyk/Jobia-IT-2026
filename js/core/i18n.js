@@ -65,7 +65,7 @@ function loadLang(code, cb) {
   if (_langWaiters[code]) { _langWaiters[code].push(cb); return; }
   _langWaiters[code] = [cb];
   const s = document.createElement("script");
-  s.src = meta.file + "?v=20261012";
+  s.src = meta.file + "?v=20261013";
   s.onload = () => {
     const q = _langWaiters[code] || []; delete _langWaiters[code];
     q.forEach(f => f && f());

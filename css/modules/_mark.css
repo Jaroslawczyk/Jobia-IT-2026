@@ -1,0 +1,39 @@
+/* =============================================================
+   MODULE · Отметка «убрать» (красная звёздочка)
+   -------------------------------------------------------------
+   .star        — звёздочка в шапке карточки направления/технологии.
+   .star.on     — карточка отмечена «убрать».
+   .role.marked — отмеченная карточка, когда отмеченные показаны.
+   .markbtn     — кнопка в фильтрах: скрывать отмеченные или нет.
+   ============================================================= */
+
+.star
+{
+  color: var(--dim);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 2px;
+  user-select: none;
+}
+
+.star:hover { color: #FF7A6B; }
+.star.on { color: #FF4D5E; text-shadow: 0 0 8px #FF4D5E99; }
+
+.role.marked { opacity: .55; border-color: #FF4D5E66; }
+
+.markbtn
+{
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--dim);
+  border-radius: 10px;
+  padding: 9px 12px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.markbtn b { color: #FF4D5E; }
+.markbtn.on { border-color: #FF4D5E88; color: var(--text); }

@@ -51,6 +51,8 @@ function renderChrome(){
     ["18", t("lt_18")],
     ["19", t("lt_19")],
   ]);
+  $("fvac").innerHTML = optionList(state.fVac, [["all",`${t("f_vac")}: ${t("any")}`]].concat(
+    VAC_STEPS.map(n=>[String(n),`${t("f_vac")}: ${t("from")} ${fmt(n)}`])));
   $("fntech").innerHTML = optionList(state.fNTech, [["all",`${t("f_ntech")}: ${t("any")}`]].concat(
     RANGES.ntech.map(([id,a,b])=>[id,`${t("f_ntech")}: ${b===Infinity?a+"+":a===0?t("upto")+" "+(b-1):a+"–"+(b-1)}`])));
 

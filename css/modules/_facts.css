@@ -42,3 +42,41 @@
   font-style: normal;
   flex-shrink: 0; /* стрелка не сжимается при переносе текста */
 }
+
+/* --- сворачиваемая карточка фактов --- */
+.facts summary
+{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.facts summary::-webkit-details-marker { display: none; }
+.facts summary h3 { margin: 0; }
+.facts[open] summary { margin-bottom: 12px; }
+
+.facts-toggle::after
+{
+  content: "▾";
+  color: var(--dim);
+  font-size: 14px;
+  display: inline-block;
+  transition: transform .15s;
+}
+
+.facts:not([open]) .facts-toggle::after { transform: rotate(-90deg); }
+
+/* факты в две колонки на широком экране */
+.facts ul
+{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 28px;
+  row-gap: 10px;
+}
+
+@media (max-width: 860px)
+{
+  .facts ul { grid-template-columns: 1fr; }
+}

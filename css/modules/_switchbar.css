@@ -1,0 +1,84 @@
+/* =============================================================
+   MODULE · Шапка и панель переключателей
+   -------------------------------------------------------------
+   .hero        — заголовок + описание слева, выбор языка справа.
+   .switchbar   — одна строка: режим (слева) и регион (справа).
+   .seg         — сегментированный переключатель: кнопки одной высоты
+                  в общей рамке; активная — залитая.
+   ============================================================= */
+
+.hero
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.hero-text { min-width: 0; }
+.hero .lead { margin-bottom: 0; }
+.hero .notice:empty { display: none; }
+.hero .notice { margin: 8px 0 0; }
+.hero #lang { flex: 0 0 auto; min-width: 150px; }
+
+.switchbar
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.seg
+{
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.seg .mode,
+.seg .region
+{
+  border: 1px solid transparent;
+  background: transparent;
+  border-radius: 10px;
+  margin: 0;
+  min-width: 0;
+}
+
+.seg .mode
+{
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.seg .region
+{
+  padding: 6px 16px;
+  min-width: 118px;
+}
+
+.seg .mode:hover,
+.seg .region:hover { color: var(--text); }
+
+@media (max-width: 860px)
+{
+  .switchbar { flex-direction: column; }
+  .seg { width: 100%; }
+  .seg .mode,
+  .seg .region { flex: 1 1 0; justify-content: center; text-align: center; }
+}
+
+@media (max-width: 640px)
+{
+  .hero { flex-direction: column-reverse; }
+  .hero #lang { align-self: flex-end; }
+  .seg--regions { display: grid; grid-template-columns: 1fr 1fr; }
+}

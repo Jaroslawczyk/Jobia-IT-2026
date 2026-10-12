@@ -42,8 +42,17 @@
 .fgrid
 {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  /* столько равных колонок, сколько фильтров влезает (5–6 в ряд) */
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 10px;
+}
+
+/* чипы групп — первая строка панели */
+.filters .chips
+{
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
 }
 
 .filters select
@@ -97,10 +106,6 @@
 
 .toggles .reset:hover { color: var(--text); }
 
-@media (max-width: 1000px)
-{
-  .fgrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-}
 
 @media (max-width: 640px)
 {

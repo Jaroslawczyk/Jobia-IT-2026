@@ -10,7 +10,7 @@
     который через @import подключает остальные части в порядке SMACSS
     (theme → base → layout → modules → state → responsive).
   -->
-  <link rel="stylesheet" href="css/main.css?v=20261018">
+  <link rel="stylesheet" href="css/main.css?v=20261019">
 </head>
 
 <body>
@@ -21,39 +21,35 @@
   -->
   <div class="wrap">
 
-    <!-- Верхняя строка: заголовок + переключатель языка (renderChrome) -->
-    <div class="topbar">
-      <div>
+    <!-- 1. Шапка: заголовок и описание слева, язык справа (renderChrome) -->
+    <header class="hero">
+      <div class="hero-text">
         <div class="eyebrow">АТЛАС IT · 2025/2026</div>
         <h1 id="h1"></h1>
+        <p class="lead" id="lead"></p>
+        <p class="notice" id="notice"></p>
       </div>
       <select id="lang" aria-label="language"></select>
-    </div>
+    </header>
 
-    <!-- Вводный текст и плашка-предупреждение (renderChrome) -->
-    <p class="lead" id="lead"></p>
-    <p class="notice" id="notice"></p>
+    <!-- 2. Панель переключателей: режим слева, регион справа -->
+    <nav class="switchbar">
+      <div class="seg" id="modes"></div>
+      <div class="seg seg--regions" id="regions"></div>
+    </nav>
 
-    <!-- Переключатель режимов «По направлениям / По технологиям» (renderChrome) -->
-    <div class="modes" id="modes"></div>
+    <!-- 3. Факты о выбранном рынке — сворачиваемая карточка (renderRegions) -->
+    <details class="card facts" id="facts" open>
+      <summary><h3 id="factsTitle"></h3><span class="facts-toggle" aria-hidden="true"></span></summary>
+      <ul id="factsList"></ul>
+    </details>
 
     <!-- ---------- Режим «По направлениям» ---------- -->
     <div id="rolesView">
-      <!-- Кнопки регионов (renderRegions) -->
-      <div class="regions" id="regions"></div>
-
-      <!-- Факты о выбранном рынке (renderRegions) -->
-      <div class="card facts">
-        <h3 id="factsTitle"></h3>
-        <ul id="factsList"></ul>
-      </div>
-
-      <!-- Чипы-фильтры по группам направлений (renderCats) -->
-      <div class="chips" id="cats"></div>
-
-      <!-- Панель фильтров (renderChrome):
-           1) поиск + сортировка + валюта  2) сетка фильтров  3) счётчик + переключатели -->
+      <!-- 4. Панель фильтров (renderChrome / renderCats):
+           группы · поиск + сортировка + валюта · сетка фильтров · счётчик + переключатели -->
       <div class="filters">
+        <div class="chips" id="cats"></div>
         <div class="frow">
           <input id="q">
           <select id="sort"></select>
@@ -65,6 +61,7 @@
           <select id="fentry"></select>
           <select id="flearn"></select>
           <select id="fntech"></select>
+          <select id="fvac"></select>
         </div>
         <div class="fbar">
           <div class="count" id="count"></div>
@@ -83,11 +80,9 @@
 
     <!-- ---------- Режим «По технологиям» ---------- -->
     <div id="techView" style="display:none">
-      <!-- Чипы-фильтры по типу технологии (renderKinds) -->
-      <div class="chips" id="kinds"></div>
-
       <!-- Панель фильтров технологий (renderChrome) — та же схема, что у направлений -->
       <div class="filters">
+        <div class="chips" id="kinds"></div>
         <div class="frow">
           <input id="tq">
           <select id="tsort"></select>
@@ -136,57 +131,57 @@
   -->
 
   <!-- 1. Данные -->
-  <script src="js/data/config.js?v=20261018"></script>
-  <script src="js/data/currency.js?v=20261018"></script>
-  <script src="js/data/learning.js?v=20261018"></script>
-  <script src="js/data/roles.js?v=20261018"></script>
-  <script src="js/data/regions.js?v=20261018"></script>
-  <script src="js/data/warsaw.js?v=20261018"></script>
-  <script src="js/data/role-extra.js?v=20261018"></script>
-  <script src="js/data/alternatives.js?v=20261018"></script>
-  <script src="js/data/ai-risk.js?v=20261018"></script>
-  <script src="js/data/tools-hardware.js?v=20261018"></script>
-  <script src="js/data/tracks.js?v=20261018"></script>
-  <script src="js/data/frameworks.js?v=20261018"></script>
-  <script src="js/data/technologies.js?v=20261018"></script>
-  <script src="js/data/day-in-life.js?v=20261018"></script>
+  <script src="js/data/config.js?v=20261019"></script>
+  <script src="js/data/currency.js?v=20261019"></script>
+  <script src="js/data/learning.js?v=20261019"></script>
+  <script src="js/data/roles.js?v=20261019"></script>
+  <script src="js/data/regions.js?v=20261019"></script>
+  <script src="js/data/warsaw.js?v=20261019"></script>
+  <script src="js/data/role-extra.js?v=20261019"></script>
+  <script src="js/data/alternatives.js?v=20261019"></script>
+  <script src="js/data/ai-risk.js?v=20261019"></script>
+  <script src="js/data/tools-hardware.js?v=20261019"></script>
+  <script src="js/data/tracks.js?v=20261019"></script>
+  <script src="js/data/frameworks.js?v=20261019"></script>
+  <script src="js/data/technologies.js?v=20261019"></script>
+  <script src="js/data/day-in-life.js?v=20261019"></script>
 
   <!-- 1a. Данные · переводы (базовые ru/en/pl; прочие языки грузятся лениво) -->
-  <script src="js/data/i18n/registry.js?v=20261018"></script>
-  <script src="js/data/i18n/ui-strings.js?v=20261018"></script>
-  <script src="js/data/i18n/langs.js?v=20261018"></script>
-  <script src="js/data/i18n/roles-en.js?v=20261018"></script>
-  <script src="js/data/i18n/roles-pl.js?v=20261018"></script>
-  <script src="js/data/i18n/kinds.js?v=20261018"></script>
-  <script src="js/data/i18n/tech-i18n.js?v=20261018"></script>
-  <script src="js/data/i18n/facts-i18n.js?v=20261018"></script>
-  <script src="js/data/i18n/sources.js?v=20261018"></script>
+  <script src="js/data/i18n/registry.js?v=20261019"></script>
+  <script src="js/data/i18n/ui-strings.js?v=20261019"></script>
+  <script src="js/data/i18n/langs.js?v=20261019"></script>
+  <script src="js/data/i18n/roles-en.js?v=20261019"></script>
+  <script src="js/data/i18n/roles-pl.js?v=20261019"></script>
+  <script src="js/data/i18n/kinds.js?v=20261019"></script>
+  <script src="js/data/i18n/tech-i18n.js?v=20261019"></script>
+  <script src="js/data/i18n/facts-i18n.js?v=20261019"></script>
+  <script src="js/data/i18n/sources.js?v=20261019"></script>
 
   <!-- 2. Ядро -->
-  <script src="js/core/state.js?v=20261018"></script>
-  <script src="js/core/data-assembly.js?v=20261018"></script>
-  <script src="js/core/helpers.js?v=20261018"></script>
-  <script src="js/core/i18n.js?v=20261018"></script>
-  <script src="js/core/metrics.js?v=20261018"></script>
+  <script src="js/core/state.js?v=20261019"></script>
+  <script src="js/core/data-assembly.js?v=20261019"></script>
+  <script src="js/core/helpers.js?v=20261019"></script>
+  <script src="js/core/i18n.js?v=20261019"></script>
+  <script src="js/core/metrics.js?v=20261019"></script>
 
   <!-- 2a. Полный английский перевод (дополняет TL.en глубокими разделами;
        en — универсальный фолбэк, поэтому грузится сразу). Разбит на части
        по объёму: en.js — разработка, en-2.js — данные/инфра/безопасность,
        en-3.js — продукт/enterprise + alt + флаг ready:"full". -->
-  <script src="js/i18n/en.js?v=20261018"></script>
-  <script src="js/i18n/en-2.js?v=20261018"></script>
-  <script src="js/i18n/en-3.js?v=20261018"></script>
+  <script src="js/i18n/en.js?v=20261019"></script>
+  <script src="js/i18n/en-2.js?v=20261019"></script>
+  <script src="js/i18n/en-3.js?v=20261019"></script>
 
   <!-- 3. Отрисовка -->
-  <script src="js/render/chrome.js?v=20261018"></script>
-  <script src="js/render/regions.js?v=20261018"></script>
-  <script src="js/render/categories.js?v=20261018"></script>
-  <script src="js/render/role-grid.js?v=20261018"></script>
-  <script src="js/render/modal-tabs.js?v=20261018"></script>
-  <script src="js/render/modal.js?v=20261018"></script>
-  <script src="js/render/tech-view.js?v=20261018"></script>
+  <script src="js/render/chrome.js?v=20261019"></script>
+  <script src="js/render/regions.js?v=20261019"></script>
+  <script src="js/render/categories.js?v=20261019"></script>
+  <script src="js/render/role-grid.js?v=20261019"></script>
+  <script src="js/render/modal-tabs.js?v=20261019"></script>
+  <script src="js/render/modal.js?v=20261019"></script>
+  <script src="js/render/tech-view.js?v=20261019"></script>
 
   <!-- 4. Точка входа -->
-  <script src="js/main.js?v=20261018"></script>
+  <script src="js/main.js?v=20261019"></script>
 </body>
 </html>

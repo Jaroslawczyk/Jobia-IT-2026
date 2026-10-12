@@ -38,6 +38,9 @@ function visible(){
   // отмеченные «убрать» — скрываем, если включено
   r=r.filter(x=>!hiddenByMarks("r:"+x.id));
 
+  // фильтр «вакансий от N» (Польша или Варшава — по выбранному региону)
+  if(state.fVac!=="all") r=r.filter(x=>(roleVac(x)||0)>=+state.fVac);
+
   // фильтр по числу технологий направления
   if(state.fNTech!=="all") r=r.filter(x=>inRange("ntech",state.fNTech,techsOfRole(x.id).length));
 

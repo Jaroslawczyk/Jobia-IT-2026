@@ -46,8 +46,9 @@
 @import "modules/_pros-cons.css";
 @import "modules/_regbox.css";
 @import "modules/_track.css";
-@import "modules/_mark.css?v=20261018";
-@import "modules/_filters.css?v=20261018";
+@import "modules/_mark.css?v=20261019";
+@import "modules/_filters.css?v=20261019";
+@import "modules/_switchbar.css?v=20261019";
 
 /* 5. STATE ---------------------------------------------------- */
 @import "state/_is-active.css";

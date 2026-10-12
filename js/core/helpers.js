@@ -36,5 +36,6 @@ const RANGES={
   entry:[["low",0,2.5],["mid",2.5,3.5],["high",3.5,Infinity]],
 };
 const inRange=(kind,id,v)=>{const g=RANGES[kind].find(x=>x[0]===id);return !g||(v>=g[1]&&v<g[2]);};
+const VAC_STEPS=[20,50,100,250,500,1000,2000];
 const roleVac=r=>state.region==="waw"?wawCount(r):plCount(r);
 const senior=r=>(r.pl.sen&&r.pl.sen[0])||0, junior=r=>(r.pl.jun&&r.pl.jun[0])||0;

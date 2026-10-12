@@ -13,7 +13,7 @@
    снимает все звёздочки этого режима (жёлтые и красные) и выключает «только избранные» */
 function resetFilters(mode){
   if(mode==="roles"){
-    Object.assign(state,{cat:"all",q:"",tech:"all",sort:"demand",fAi:"all",fEntry:"all",fLearn:"all",fNTech:"all"});
+    Object.assign(state,{cat:"all",q:"",tech:"all",sort:"demand",fAi:"all",fEntry:"all",fLearn:"all",fNTech:"all",fVac:"all"});
     $("q").value="";
   } else {
     Object.assign(state,{kind:"all",tq:"",tGroup:"all",tSort:"name",tVSum:"all",tVAvg:"all",tNRoles:"all",tEntry:"all"});
@@ -22,7 +22,12 @@ function resetFilters(mode){
   const pre=mode==="roles"?"r:":"t:";
   for(const set of [state.fav,state.marked]) for(const k of [...set]) if(k.startsWith(pre)) set.delete(k);
   state.onlyFav=false; saveFav(); saveMarks();
-  renderAll();
+  /* карточка фактов: свёрнута или развёрнута — запоминаем */
+(()=>{const f=$("facts");if(!f)return;
+  try{if(localStorage.getItem("jobia.factsOpen")==="0")f.open=false;}catch(e){}
+  f.addEventListener("toggle",()=>{try{localStorage.setItem("jobia.factsOpen",f.open?"1":"0");}catch(e){}});})();
+
+renderAll();
 }
 
 function renderAll(){renderChrome();renderRegions();renderCats();renderGrid();renderKinds();renderTech();}
@@ -34,7 +39,12 @@ function applyLang(code){
     const meta = LANG_BY_CODE[code] || {};
     document.documentElement.lang = code;
     document.documentElement.dir = meta.dir || "ltr";
-    renderAll();
+    /* карточка фактов: свёрнута или развёрнута — запоминаем */
+(()=>{const f=$("facts");if(!f)return;
+  try{if(localStorage.getItem("jobia.factsOpen")==="0")f.open=false;}catch(e){}
+  f.addEventListener("toggle",()=>{try{localStorage.setItem("jobia.factsOpen",f.open?"1":"0");}catch(e){}});})();
+
+renderAll();
     if (state.open) renderModal();
   });
 }
@@ -54,6 +64,7 @@ on("sort","change",e=>{state.sort=e.target.value;renderGrid();});
 on("fai","change",e=>{state.fAi=e.target.value;renderGrid();});
 on("fentry","change",e=>{state.fEntry=e.target.value;renderGrid();});
 on("flearn","change",e=>{state.fLearn=e.target.value;renderGrid();});
+on("fvac","change",e=>{state.fVac=e.target.value;renderGrid();});
 on("fntech","change",e=>{state.fNTech=e.target.value;renderGrid();});
 
 /* фильтры режима «По технологиям» */
@@ -97,5 +108,10 @@ on("modal","click",e=>{
     $("tq").value=tc.dataset.tech;renderChrome();renderKinds();renderTech();window.scrollTo(0,0);}});
 on("ov","click",e=>{if(e.target.id==="ov"){state.open=null;renderModal();}});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&state.open){state.open=null;renderModal();}});
+
+/* карточка фактов: свёрнута или развёрнута — запоминаем */
+(()=>{const f=$("facts");if(!f)return;
+  try{if(localStorage.getItem("jobia.factsOpen")==="0")f.open=false;}catch(e){}
+  f.addEventListener("toggle",()=>{try{localStorage.setItem("jobia.factsOpen",f.open?"1":"0");}catch(e){}});})();
 
 renderAll();
